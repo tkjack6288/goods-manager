@@ -1,0 +1,2053 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>E102宅配出貨-店+後台管理系統</title>
+  <!-- 必須添加，專案前端框架的核心檔案。 -->
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <!-- 選擇添加，專案前端框架的 icon 文字樣式檔案，
+      如果畫面沒有使用到的 icon 可以選擇性添加，添加時務必包含 字型檔案 存放正確路徑上 -->
+  <link rel="stylesheet" href="css/font/bootstrap-icons.min.css">
+  <!-- 必須添加，專案前端框架的核心檔案，經過前端團隊進行定義的樣式。 -->
+  <link rel="stylesheet" href="css/base/sm-root.css">
+  <!-- 必須添加，專案前端框架的核心檔案，包含了 Popper 
+      以使用我們的工具提示 (Tooltips) 和彈出提示框 (Popovers) JavaScript 套件 -->
+  <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+  <!-- 必須添加，資料表與主選單均會使用到的函式庫 -->
+  <script src="js/jquery/jquery-3.7.1.min.js"></script>
+  <script language="javascript" type="text/javascript" src="js/jquery/jquery.json-2.2.min.js"></script>
+  <!-- 必須添加，主選單會使用到的 JavaScript -->
+  <script src="js/components/header.js"></script>
+  <!-- 選擇添加， 檔案上傳會使用到的 JavaScript -->
+  <script src="js/components/fileInput.js"></script>
+  <!-- dataTables 套件 -->
+  <!-- 選擇添加，dataTables 資料表套件樣式，如果畫面沒有資料表，可以不添加。 -->
+  <link rel="stylesheet" href="css/plugins/dataTables/dataTables.bootstrap5.min.css">
+  <!-- 選擇添加，dataTables 資料表套件 JavaScript，如果畫面沒有資料表，可以不添加。 -->
+  <script src="js/plugins/dataTables/jquery.dataTables.min.js"></script>
+  <!-- 選擇添加，dataTables 資料表凍結儲存格套件 JavaScript，如果畫面沒有資料表需要凍結，可以不添加。 -->
+  <script src="js/plugins/dataTables/dataTables.fixedColumns.min.js"></script>
+  <!-- 選擇添加，dataTables 字數過長省略。 -->
+  <script src="js/plugins/dataTables/dataTables.ellipsis.js"></script>
+  <link rel="stylesheet" href="css/plugins/dataTables/fixedColumns.bootstrap5.min.css">
+  
+  <script src="js/plugins/dataTables/dataTables.fixedHeader.min.js"></script>
+  <link rel="stylesheet" href="css/plugins/dataTables/fixedHeader.dataTables.min.css">
+  <!-- 選擇添加，Color Picker 套件可以不添加。 -->
+  <link rel="stylesheet" href="css/plugins/spectrum/spectrum.min.css">
+  <script src="js/plugins/spectrum/spectrum.min.js"></script>
+  <!-- Date Range Picker 套件 ，如果畫面沒有 Date Range Picker，可以不添加。-->
+  <script src="js/plugins/dateRangePicker/moment.min.js"></script>
+  <script src="js/plugins/dateRangePicker/daterangepicker.js"></script>
+  <link rel="stylesheet" href="css/plugins/dateRangePicker/daterangepicker.css">
+  <!-- photoSwipe 套件 ，如果畫面沒有 photoSwipe，可以不添加。-->
+  <script src="js/plugins/photoswipe/photoswipe-lightbox.umd.min.js"></script>
+  <script src="js/plugins/photoswipe/photoswipe.umd.min.js"></script>
+  <link rel="stylesheet" href="css/plugins/photoswipe/photoswipe.min.css">
+  <!-- autocomplete 使用  -->
+  <script src="js/jquery/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <!-- SheetJS套件，讀取excel使用  -->
+  <script src="js/plugins/sheetjs/xlsx.full.min.js"></script>
+  
+  <!-- select2 使用  -->
+  <script src="js/plugins/select2/select2.full.min.js"></script>
+  <!-- <link rel="stylesheet" href="../template/css/plugins/select2/select2-bootstrap-5-theme.min.css" /> -->
+  <link rel="stylesheet" href="css/plugins/select2/select2.min.css">
+  
+  <!-- 必須添加，專案前端框架的核心檔案，主要包含元件/排版樣式/複寫樣式的檔案，請放在所有套件與樣式的後方 -->
+  <link rel="stylesheet" href="css/motMain.css">
+  <link rel="stylesheet" href="css/jsp/tiles/frame.css?t=202602282210">
+
+  <script src="js/sm3p.js?t=202602282210"></script>
+  <!-- original code -->
+  <script language="javascript" type="text/javascript" src="js/autohan.js?t=202602282210"></script>
+  <script language="javascript" type="text/javascript" src="js/smjq.js?t=202602282210"></script>
+  <script language="javascript" type="text/javascript" src="js/frame.js?t=202602282210"></script>
+
+  <script language="javascript" type="text/javascript" src="js/jquery/jquery.form.js"></script>
+  <!-- 推播通知 -->
+  <script type="text/javascript" src="js/jsp/tiles/notifCommon.js?t=202602282210"></script>
+  
+  <!-- 成立問問 -->
+  <script src="js/momoask/momoask.js"></script>
+
+  <!-- 問問React元件 -->
+  
+  
+    <link rel="stylesheet" href="js/pages/Ask2ChatWidget/main.css?t=202602282210">
+    <script type="module" src="js/pages/Ask2ChatWidget/main.js?t=202602282210"></script>
+  
+  
+  
+
+</head>
+<body class="d-flex mot-bg-light flex-column h-100" style="">
+  <!-- header 區塊 -->
+  <header class="header-bg text-white position-relative">
+    <!-- header top 區塊 -->
+    <div class="container mot-min-w-1200 d-flex align-items-center" data-bs-theme="dark">
+      <a class="navbar-brand me-auto mt-2 mt-lg-0" href=""><span class="fs-1 fw-bold me-2"> <img src="./img/logoMomo.png" style="max-width: 160px;"> </span>
+      <span class="fs-2">店+管理系統</span></a>
+      <nav class="nav nav-login d-flex align-items-center gap-3">
+        <span id="entpName">爽購物-000</span>
+        <span class="text-white-50 fw-lighter">操作剩餘時間：<b id="timeoutMinute">1440</b> 分鐘</span>
+        <a class="nav-link" id="logout" href="">登出</a>
+      </nav>
+    </div>
+    <!-- header 主選單 區塊 -->
+    <nav class="navbar navbar-expand navbar-light border-body p-0">
+      <div class="container mot-min-w-1200">
+        <div class="nav-group pb-2"><nav class="nav nav-main text-white"><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav0" aria-expanded="false">商店</button><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav1" aria-expanded="false">商品</button><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav2" aria-expanded="false">活動管理</button><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav3" aria-expanded="false">問問</button><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav4" aria-expanded="false">訂單</button><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav5" aria-expanded="false">帳務</button><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav6" aria-expanded="false">分析</button><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav7" aria-expanded="false">廣告管理</button><button class="nav-link btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSubNav8" aria-expanded="false">聯盟行銷</button><button class="nav-link btn" type="button" onclick="window.open('https://momo.dm/3BfffQ','_blank')" style="padding: 7px 4px 8px 18px">產品責任險</button></nav><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav0"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">權限管理</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="A101使用人管理" mmenuname="權限管理" lmenuname="商店" url="/A101Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A101Servlet.do');">A101使用人管理</a></li><li><a class="dropdown-item" smenuname="A102使用人權限管理" mmenuname="權限管理" lmenuname="商店" url="/A102Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A102Servlet.do');">A102使用人權限管理</a></li><li><a class="dropdown-item" smenuname="A103API串接IP位址管理" mmenuname="權限管理" lmenuname="商店" url="/A103Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A103Servlet.do');">A103API串接IP位址管理</a></li><li><a class="dropdown-item" smenuname="A104直播帳號管理" mmenuname="權限管理" lmenuname="商店" url="/A104Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A104Servlet.do');">A104直播帳號管理</a></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">店面管理</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="A201商店資料設定" mmenuname="店面管理" lmenuname="商店" url="/A201Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A201Servlet.do');">A201商店資料設定</a></li><li><a class="dropdown-item" smenuname="A202 資料下載" mmenuname="店面管理" lmenuname="商店" url="/A202Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A202Servlet.do');">A202 資料下載</a></li><li><a class="dropdown-item" smenuname="A203商店首頁設定" mmenuname="店面管理" lmenuname="商店" url="/A203Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A203Servlet.do');">A203商店首頁設定</a></li><li><a class="dropdown-item" smenuname="A204商店分類設定" mmenuname="店面管理" lmenuname="商店" url="/A204Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A204Servlet.do');">A204商店分類設定</a></li><li><a class="dropdown-item" smenuname="A205營運表現" mmenuname="店面管理" lmenuname="商店" url="/A205Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A205Servlet.do');">A205營運表現</a></li><li><a class="dropdown-item" smenuname="A206商店QA" mmenuname="店面管理" lmenuname="商店" url="/A206Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A206Servlet.do');">A206商店QA</a></li><li></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">素材管理</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="A301素材生成" mmenuname="素材管理" lmenuname="商店" url="/A301_1Servlet.do" href="javascript:void(0)" onclick="doClickCount('/A301_1Servlet.do');">A301素材生成</a></li></ul></li></ul></div></div></div><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav1"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">商品管理</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="B101 新增/管理商品" mmenuname="商品管理" lmenuname="商品" url="/B001Servlet.do" href="javascript:void(0)" onclick="doClickCount('/B001Servlet.do');">B101 新增/管理商品</a></li><li><a class="dropdown-item" smenuname="B102 大量新增商品" mmenuname="商品管理" lmenuname="商品" url="/B207Servlet.do" href="javascript:void(0)" onclick="doClickCount('/B207Servlet.do');">B102 大量新增商品</a></li><li><a class="dropdown-item" smenuname="B104 備貨天數/預購管理" mmenuname="商品管理" lmenuname="商品" url="/B104Servlet.do" href="javascript:void(0)" onclick="doClickCount('/B104Servlet.do');">B104 備貨天數/預購管理</a></li><li><a class="dropdown-item" smenuname="B105 排除異常訂購下架" mmenuname="商品管理" lmenuname="商品" url="/B105Servlet.do" href="javascript:void(0)" onclick="doClickCount('/B105Servlet.do');">B105 排除異常訂購下架</a></li><li><a class="dropdown-item" smenuname="B106 開賣預告設定" mmenuname="商品管理" lmenuname="商品" url="/B106Servlet.do" href="javascript:void(0)" onclick="doClickCount('/B106Servlet.do');">B106 開賣預告設定</a></li><li><a class="dropdown-item" smenuname="B107 相關商品設定" mmenuname="商品管理" lmenuname="商品" url="/B107Servlet.do" href="javascript:void(0)" onclick="doClickCount('/B107Servlet.do');">B107 相關商品設定</a></li><li></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">評價</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="B201商品評價" mmenuname="評價" lmenuname="商品" url="/G106Servlet.do" href="javascript:void(0)" onclick="doClickCount('/G106Servlet.do');">B201商品評價</a></li></ul></li></ul></div></div></div><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav2"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">活動設定</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="C101行銷活動" mmenuname="活動設定" lmenuname="活動管理" url="/C101Servlet.do" href="javascript:void(0)" onclick="doClickCount('/C101Servlet.do');">C101行銷活動</a></li><li><a class="dropdown-item" smenuname="C102優惠劵" mmenuname="活動設定" lmenuname="活動管理" url="/C102Servlet.do" href="javascript:void(0)" onclick="doClickCount('/C102Servlet.do');">C102優惠劵</a></li><li><a class="dropdown-item" smenuname="C103運費門檻折扣" mmenuname="活動設定" lmenuname="活動管理" url="/C103Servlet.do" href="javascript:void(0)" onclick="doClickCount('/C103Servlet.do');">C103運費門檻折扣</a></li><li><a class="dropdown-item" smenuname="C104限購活動" mmenuname="活動設定" lmenuname="活動管理" url="/C104Servlet.do" href="javascript:void(0)" onclick="doClickCount('/C104Servlet.do');">C104限購活動</a></li><li><a class="dropdown-item" smenuname="C105EDM管理" mmenuname="活動設定" lmenuname="活動管理" url="/C105Servlet.do" href="javascript:void(0)" onclick="doClickCount('/C105Servlet.do');">C105EDM管理</a></li><li><a class="dropdown-item" smenuname="C106名單管理" mmenuname="活動設定" lmenuname="活動管理" url="/C106Servlet.do" href="javascript:void(0)" onclick="doClickCount('/C106Servlet.do');">C106名單管理</a></li><li><a class="dropdown-item" smenuname="C107公眾推播" mmenuname="活動設定" lmenuname="活動管理" url="/C107_PromServlet.do" href="javascript:void(0)" onclick="doClickCount('/C107_PromServlet.do');">C107公眾推播</a></li><li></li><li></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">活動報名</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="C201活動報名" mmenuname="活動報名" lmenuname="活動管理" url="/C201Servlet.do" href="javascript:void(0)" onclick="doClickCount('/C201Servlet.do');">C201活動報名</a></li><li><a class="dropdown-item" smenuname="C202活動費用查詢" mmenuname="活動報名" lmenuname="活動管理" url="/C202Servlet.do" href="javascript:void(0)" onclick="doClickCount('/C202Servlet.do');">C202活動費用查詢</a></li></ul></li></ul></div></div></div><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav3"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">問問管理</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="D101問問" mmenuname="問問管理" lmenuname="問問" url="/D101Servlet.do" href="javascript:void(0)" onclick="doClickCount('/D101Servlet.do');">D101問問</a></li><li><a class="dropdown-item" smenuname="D102問問答錄" mmenuname="問問管理" lmenuname="問問" url="/D102Servlet.do" href="javascript:void(0)" onclick="doClickCount('/D102Servlet.do');">D102問問答錄</a></li><li><a class="dropdown-item" smenuname="D103封鎖名單管理" mmenuname="問問管理" lmenuname="問問" url="/D103Servlet.do" href="javascript:void(0)" onclick="doClickCount('/D103Servlet.do');">D103封鎖名單管理</a></li></ul></li></ul></div></div></div><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav4"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">訂單管理</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="E101未出貨商品清單" mmenuname="訂單管理" lmenuname="訂單" url="/E101Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E101Servlet.do');">E101未出貨商品清單</a></li><li><a class="dropdown-item active" smenuname="E102宅配出貨" mmenuname="訂單管理" lmenuname="訂單" url="/E102Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E102Servlet.do');">E102宅配出貨</a></li><li><a class="dropdown-item" smenuname="E103超取出貨" mmenuname="訂單管理" lmenuname="訂單" url="/E103Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E103Servlet.do');">E103超取出貨</a></li><li><a class="dropdown-item" smenuname="E104取消訂單(攔貨)" mmenuname="訂單管理" lmenuname="訂單" url="/E104Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E104Servlet.do');">E104取消訂單(攔貨)</a></li><li><a class="dropdown-item" smenuname="E105退貨" mmenuname="訂單管理" lmenuname="訂單" url="/E105Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E105Servlet.do');">E105退貨</a></li><li><a class="dropdown-item" smenuname="E106訂單總覽" mmenuname="訂單管理" lmenuname="訂單" url="/E106Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E106Servlet.do');">E106訂單總覽</a></li><li><a class="dropdown-item" smenuname="E107出貨中訂單查詢" mmenuname="訂單管理" lmenuname="訂單" url="/E107Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E107Servlet.do');">E107出貨中訂單查詢</a></li><li><a class="dropdown-item" smenuname="E108訂單返回作業" mmenuname="訂單管理" lmenuname="訂單" url="/E108Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E108Servlet.do');">E108訂單返回作業</a></li><li><a class="dropdown-item" smenuname="E109第三方物流出貨" mmenuname="訂單管理" lmenuname="訂單" url="/E109Servlet.do" href="javascript:void(0)" onclick="doClickCount('/E109Servlet.do');">E109第三方物流出貨</a></li></ul></li></ul></div></div></div><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav5"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">帳務管理</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="H101商店對帳" mmenuname="帳務管理" lmenuname="帳務" url="/H101Servlet.do" href="javascript:void(0)" onclick="doClickCount('/H101Servlet.do');">H101商店對帳</a></li><li><a class="dropdown-item" smenuname="H102扣款明細表" mmenuname="帳務管理" lmenuname="帳務" url="/H102Servlet.do" href="javascript:void(0)" onclick="doClickCount('/H102Servlet.do');">H102扣款明細表</a></li><li><a class="dropdown-item" smenuname="H103電子發票維護" mmenuname="帳務管理" lmenuname="帳務" url="/H103Servlet.do" href="javascript:void(0)" onclick="doClickCount('/H103Servlet.do');">H103電子發票維護</a></li><li><a class="dropdown-item" smenuname="H104電子發票開立狀況查詢" mmenuname="帳務管理" lmenuname="帳務" url="/H104Servlet.do" href="javascript:void(0)" onclick="doClickCount('/H104Servlet.do');">H104電子發票開立狀況查詢</a></li><li><a class="dropdown-item" smenuname="H105媒體申報檔" mmenuname="帳務管理" lmenuname="帳務" url="/H105Servlet.do" href="javascript:void(0)" onclick="doClickCount('/H105Servlet.do');">H105媒體申報檔</a></li><li><a class="dropdown-item" smenuname="H106商店領款作業" mmenuname="帳務管理" lmenuname="帳務" url="/H106Servlet.do" href="javascript:void(0)" onclick="doClickCount('/H106Servlet.do');">H106商店領款作業</a></li><li><a class="dropdown-item" smenuname="H107扣款發票列印" mmenuname="帳務管理" lmenuname="帳務" url="/H107Servlet.do" href="javascript:void(0)" onclick="doClickCount('/H107Servlet.do');">H107扣款發票列印</a></li><li><a class="dropdown-item" smenuname="H108代收代付客訴爭議費" mmenuname="帳務管理" lmenuname="帳務" url="/H108Servlet.do" href="javascript:void(0)" onclick="doClickCount('/H108Servlet.do');">H108代收代付客訴爭議費</a></li></ul></li></ul></div></div></div><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav6"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">品類分析</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="I101品類分析_今日" mmenuname="品類分析" lmenuname="分析" url="/I101Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I101Servlet.do');">I101品類分析_今日</a></li><li><a class="dropdown-item" smenuname="I102品類分析_昨日" mmenuname="品類分析" lmenuname="分析" url="/I102Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I102Servlet.do');">I102品類分析_昨日</a></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">流量分析</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="I205關鍵詞導流" mmenuname="流量分析" lmenuname="分析" url="/I205Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I205Servlet.do');">I205關鍵詞導流</a></li><li><a class="dropdown-item" smenuname="I204UTM站外流量分析" mmenuname="流量分析" lmenuname="分析" url="/I204Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I204Servlet.do');">I204UTM站外流量分析</a></li><li><a class="dropdown-item" smenuname="I203EDM流量分析" mmenuname="流量分析" lmenuname="分析" url="/I203Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I203Servlet.do');">I203EDM流量分析</a></li><li><a class="dropdown-item" smenuname="I202流量來源" mmenuname="流量分析" lmenuname="分析" url="/I202Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I202Servlet.do');">I202流量來源</a></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">行銷活動分析</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="I301優惠券分析" mmenuname="行銷活動分析" lmenuname="分析" url="/I301Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I301Servlet.do');">I301優惠券分析</a></li><li><a class="dropdown-item" smenuname="I303折扣活動成效分析    " mmenuname="行銷活動分析" lmenuname="分析" url="/I303Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I303Servlet.do');">I303折扣活動成效分析    </a></li><li><a class="dropdown-item" smenuname="I302加購品/贈品活動成效分析" mmenuname="行銷活動分析" lmenuname="分析" url="/I302Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I302Servlet.do');">I302加購品/贈品活動成效分析</a></li><li><a class="dropdown-item" smenuname="I305運費折抵分析" mmenuname="行銷活動分析" lmenuname="分析" url="/I305Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I305Servlet.do');">I305運費折抵分析</a></li><li><a class="dropdown-item" smenuname="I306跨店滿額折" mmenuname="行銷活動分析" lmenuname="分析" url="/I306Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I306Servlet.do');">I306跨店滿額折</a></li><li></li><li></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">會員分析</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="I501會員輪廓分析" mmenuname="會員分析" lmenuname="分析" url="/I501Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I501Servlet.do');">I501會員輪廓分析</a></li><li></li></ul></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">市場分析</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="I601 市場關鍵詞分析" mmenuname="市場分析" lmenuname="分析" url="/I601Servlet.do" href="javascript:void(0)" onclick="doClickCount('/I601Servlet.do');">I601 市場關鍵詞分析</a></li></ul></li></ul></div></div></div><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav7"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">廣告管理</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="J102廣告儲值功能" mmenuname="廣告管理" lmenuname="廣告管理" url="/J102Servlet.do" href="javascript:void(0)" onclick="doClickCount('/J102Servlet.do');">J102廣告儲值功能</a></li><li><a class="dropdown-item" smenuname="J101登入momo Ads廣告平台" mmenuname="廣告管理" lmenuname="廣告管理" url="/J101Servlet.do" href="javascript:void(0)" onclick="doClickCount('/J101Servlet.do');">J101登入momo Ads廣告平台</a></li></ul></li></ul></div></div></div><div class="nav-drop collapse position-absolute start-0 end-0" id="collapseSubNav8"><div class="card card-body p-1 rounded-0 border-0"><div class="container mot-min-w-1200"><ul class="nav nav-sub"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">聯盟行銷</a><ul class="dropdown-menu"><li><a class="dropdown-item" smenuname="聯盟行銷" mmenuname="聯盟行銷" lmenuname="聯盟行銷" url="/M101Servlet.do" href="javascript:void(0)" onclick="doClickCount('/M101Servlet.do');">聯盟行銷</a></li></ul></li></ul></div></div></div></div>
+        <!-- header 次選單 secondary nav 區塊 -->
+        <nav class="nav d-flex gap-2 pb-3 mot-secondary-nav flex-nowrap align-self-start">
+          <div id="notifWrapper" class="position-relative d-inline-block flex-shrink-0">
+            <a class="btn btn-outline-light rounded-pill position-relative" id="momoaskButton">通知</a>
+            <!-- 推播通知浮層 -->
+            <div id="notifPanel" class="notif-panel">
+              <div class="notif-header">
+                <span class="notif-title">通知</span>
+                <a href="javascript:void(0)" id="notifViewAll" class="notif-view-all">查看全部</a>
+              </div>
+              <div class="notif-lastest-list">
+              	<!-- 最新五筆推播通知區塊 -->
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-outline-light rounded-pill flex-shrink-0" id="rules" href="https://rules.momo.com.tw/" target="_blank">商店規則中心</a>
+          <a class="btn btn-outline-light rounded-pill flex-shrink-0" id="contactMomo" href="" data-bs-toggle="modal" data-bs-target="#contactModal">聯絡momo</a>
+        	
+<!--           <a class="btn btn-outline-light rounded-pill" id="index" href="">首頁</a> -->
+<!--           <a class="btn btn-outline-light rounded-pill" id="qandA" href="">Q&A常見問題</a> -->
+        </nav>
+        <!-- 推播導頁無權限toast -->
+        <div id="toastContainer" class="toast-container position-fixed top-50 start-50 translate-middle p-3" style="z-index: 1100">
+          <div id="noPermissionToast" class="toast toast-yellow border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              【此帳號無此功能權限】
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container mot-min-w-1200 mot-container">
+  <!-- 路徑 -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb py-2">
+        <li class="breadcrumb-item"><a class="link" id="homePage" href="">首頁</a></li>
+        <li class="breadcrumb-item" id="lmenuName">訂單</li>
+        <li class="breadcrumb-item" id="mmenuName">訂單管理</li>
+        <li class="breadcrumb-item active" id="smenuName" aria-current="page">E102宅配出貨</li>
+        <li class="breadcrumb-item menuUrl d-none">教學影片</li>
+      </ol>
+    </nav>
+    <!-- main container : 一般的 主要內容區域容器 -->
+    <div id="main">
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E102宅配出貨</title>
+
+<!-- <link rel="stylesheet" href="js/template/css/bootstrap/bootstrap.min.css" /> -->
+<!-- <link rel="stylesheet" href="js/template/css/font/bootstrap-icons.min.css" /> -->
+<!-- <link rel="stylesheet" href="js/template/css/base/sm-root.css?231101" /> -->
+<!-- <script src="js/template/js/bootstrap/bootstrap.bundle.min.js"></script> -->
+<!-- <script src="js/template/js/jquery-3.7.1.min.js"></script> -->
+<!-- <script src="js/template/js/components/header.js"></script> -->
+<!-- <script src="js/template/js/components/fileInput.js"></script> -->
+<!-- <link rel="stylesheet" href="js/template/css/plugins/dataTables/dataTables.bootstrap5.min.css" /> -->
+<!-- <script src="js/template/js/plugins/dataTables/jquery.dataTables.min.js"></script> -->
+<!-- <script src="js/template/js/plugins/dataTables/dataTables.fixedColumns.min.js"></script> -->
+<!-- <link rel="stylesheet" href="js/template/css/plugins/spectrum/spectrum.min.css" /> -->
+<!-- <script src="js/template/js/plugins/spectrum/spectrum.min.js"></script> -->
+<!-- <script src="js/template/js/plugins/dateRangePicker/moment.min.js"></script> -->
+<!-- <script src="js/template/js/plugins/dateRangePicker/daterangepicker.js"></script> -->
+<!-- <link rel="stylesheet" href="js/template/css/plugins/dateRangePicker/daterangepicker.css" /> -->
+<!-- <script src="js/template/js/plugins/photoswipe/photoswipe-lightbox.umd.min.js"></script> -->
+<!-- <script src="js/template/js/plugins/photoswipe/photoswipe.umd.min.js"></script> -->
+<!-- <link rel="stylesheet" href="js/template/css/plugins/photoswipe/photoswipe.min.css" /> -->
+<!-- <script src="js/template/js/plugins/splide/splide.min.js"></script> -->
+<!-- <link rel="stylesheet" href="js/template/css/plugins/splide/themes/splide-momo.css" /> -->
+<!-- <script src="js/template/js/jquery-ui.min.js"></script> -->
+<!-- <link rel="stylesheet" href="js/template/css/jquery-ui.min.css" /> -->
+<!-- <link rel="stylesheet" href="js/template/css/motMain.css?231101" /> -->
+
+
+<style>
+.btn.btn-primary.btn-sm {
+	height: 25px;
+}
+
+#E102Tbody .customer-ask {
+    background-color: orange !important;
+}
+
+.custom-tooltip .tooltip-inner {
+	text-align: left;
+}
+
+.mot-btn-info {
+  --bs-btn-font-size: 1.25rem;
+}
+
+.invisible-w0 {
+	visibility: hidden !important;
+	width: 0px;
+	height: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.text-bg-gray {
+  color: #ffffff;
+  background-color: #A6A6A6;
+}
+</style>
+
+
+	<!-- 對話框 -->
+	<div id="E102DivModalDialog" class="modal fade" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 id="E102ModalTitle" class="modal-title">執行結果</h5>
+					<input id="E102xxxModalClose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+				</div>
+				<div id="E102DivModalBody" class="modal-body">查詢資料，共5筆</div>
+				<div class="modal-footer" style="display: flex;">
+					<div id="E102DivModalReceiptMsg" class="text-danger invisible-w0" style="flex: 1;white-space: pre-wrap;"></div>
+					<input id="E102BtnModalUploadFile" type="button" class="btn btn-primary invisible-w0" value="開始匯入">
+					<input id="E102BtnModalClose" type="button" class="btn btn-primary" data-bs-dismiss="modal" value="關閉">
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div>
+			<div class="card">
+				<div class="container-fluid position-relative" style="background-color: #CED0DC; color: #000000; height: 33px;">
+				<div class="row">
+					<div class="col justify-content-start mt-1">
+						<div class="row" style="font-size: 15px;">
+							<b>查詢條件</b>
+						</div>
+					</div>
+					<div class="col d-flex justify-content-end my-1">
+						<a href="https://youtu.be/S3ggufEGAzI" target="_blank" id="educatedYtLink" style="text-align: right; font-weight: normal; color: #5E6999; padding-right: 16px;">宅配出貨系統操作</a>
+						<a href="https://youtu.be/wEDiztHC_Uw" target="_blank" id="educatedYtLink" style="text-align: right; font-weight: normal; color: #5E6999; padding-right: 16px;">約定配送出貨系統操作</a>
+						<input type="button" class="btn btn-primary btn-sm" id="E102BtnToggleQuery" value="＋展開查詢">
+					</div>
+				</div>
+			</div>
+				<div id="E102DivToggleQuery" class="card-body" style="display: none;">
+					<div class="row">
+						<p>注意事項<br>
+						．凡為約定送貨日之商品，請供應商於轉單日+1個工作日與消費者約定送貨日期，可約定送貨時間為限制轉單日+60日以內之日期<br>
+						．客戶訂購四機商品，請供應商於送貨前與消費者確認廢四機是否回收<br>
+						．包材重量填寫單位為「公克」，包材類型及重量請務必填寫正確；甲配出貨請遵行<span id="E102SpanLink" style="color:#027bff; cursor:pointer;">商店規則中心出貨履約說明</span>，以避免衍生罰款，momo將定期稽查甲配出貨包裝<br>
+						．若因商品無量需取消訂單，請於訂單配送狀態選擇「無貨取消訂單」，系統將會發送推播通知客人，後續請店家於【E106訂單總覽】透過問問與客人聯絡<br>
+						．請注意：「橘底為通知配送日更改需與消費者聯絡」<br>
+						</p>
+					</div>
+					<div class="d-flex mt-1 my-3">
+						<div style="width: 100px; text-align: right; font-size:12px; font-color:#252525; font-weight:bolder;">轉單日：</div>
+						<div class="d-flex" style="width: 430px">
+							<input type="datetime-local" class="form-control form-control-sm" id="E102InputStartDate" value="">&nbsp;~&nbsp;<input type="datetime-local" class="form-control form-control-sm" id="E102InputEndDate" value="">
+						</div>
+						<div style="width: 100px; text-align: right; font-size:12px; font-color:#252525; font-weight:bolder;">商品原廠編號：</div>
+						<div class="d-flex" style="width: 430px">
+							<input type="text" class="form-control form-control-sm" id="E102InputEntpGoodsNo" value="" placeholder="輸入商品原廠編號...">
+						</div>
+					</div>
+					<div class="d-flex mt-1 my-3">
+						<div style="width: 100px; text-align: right; font-size:12px; font-color:#252525; font-weight:bolder;">最晚出貨日：</div>
+						<div class="d-flex" style="width: 430px">
+							<input type="date" class="form-control form-control-sm" id="E102InputStartDateDelivery" value="">&nbsp;~&nbsp;<input type="date" class="form-control form-control-sm" id="E102InputEndDateDelivery" value="">
+						</div>
+						<div style="width: 100px; text-align: right; font-size:12px; font-color:#252525; font-weight:bolder;">訂單編號：</div>
+						<div class="d-flex" style="width: 430px">
+							<input type="text" class="form-control form-control-sm" id="E102InputOrderNo" value="" placeholder="輸入訂單編號...">
+						</div>
+					</div>
+					<div class="d-flex mt-1 my-3">
+						<div style="width: 100px; text-align: right; font-size:12px; font-color:#252525; font-weight:bolder;">收件人姓名：</div>
+						<div class="d-flex" style="width: 430px">
+							<input type="text" class="form-control form-control-sm" id="E102InputReceiverName" value="" placeholder="輸入收件人姓名...">
+						</div>
+						<div style="width: 100px; text-align: right; font-size:12px; font-color:#252525; font-weight:bolder;">訂單類別：</div>
+						<div class="d-flex" style="width: 430px">
+							<select class="form-control form-control-sm" id="E102SelectOrderType">
+								<option value="All">全部</option>
+								<option value="NormalDelivery">一般訂單</option>
+								<option value="AgreedDelivery">一般訂單(約配)</option>
+							</select>
+						</div>
+					</div>
+					<div class="d-flex">
+						<div style="width: 100px; text-align: right; font-size:12px; font-color:#252525; font-weight:bolder;">商品編號：</div>
+						<div class="d-flex" style="width: 430px">
+							<input type="text" class="form-control form-control-sm" id="E102InputGoodsCode" value="" placeholder="輸入商品編號...">
+						</div>
+						<div style="width: 100px; text-align: right; font-size:12px; font-color:#252525; font-weight:bolder;">廢四機回收：</div>
+						<div class="d-flex" style="width: 250px; font-size:12px; font-color:#252525; font-weight:bolder;">
+							<input type="radio" class="form-check-input" id="E102RadioTrash4All" name="E102RadioTrash4" value="All" checked="">全部<input type="radio" class="form-check-input ml-2" id="E102RadioTrash4Yes" name="E102RadioTrash4" value="Yes">是<input type="radio" class="form-check-input ml-2" id="E102RadioTrash4No" name="E102RadioTrash4" value="No">否
+						</div>
+					</div>
+					<div class="d-flex">
+						<div style="width: 100px; text-align: right; font-size: 12px; font-color: #252525; font-weight: bolder;">更換地址：</div>
+						<div class="d-flex" style="width: 800px; font-size: 12px; font-color: #252525; font-weight: bolder;">
+							<input type="radio" class="form-check-input" name="E102RadioChangedAddress" value="all" checked="">全部
+							<input type="radio" class="form-check-input ml-2" name="E102RadioChangedAddress" value="origin">原地址
+							<input type="radio" class="form-check-input ml-2" name="E102RadioChangedAddress" value="applyChange">申請更換
+							<input type="radio" class="form-check-input ml-2" name="E102RadioChangedAddress" value="alreadyChange">已更換地址
+						</div>
+						<div class="d-flex justify-content-end" style="width: 150px; font-size: 12px; font-color: #252525; font-weight: bolder;">
+							<input type="button" class="btn btn-primary btn-sm mx-0" id="E102BtnQuery" value="查詢">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    <div class="card my-3">
+      <div class="container-fluid position-relative" style="background-color: #CED0DC; color: #000000;  height:33px;">
+        <div class="row">
+          <div class="col-8 justify-content-end mt-1">
+            <div style="font-size: 15px;">
+              <b>宅配出貨總覽</b>
+              <span id="receiptMsg" class="text-danger" style="margin-left: 10px; font-size: 0.8rem;"></span>
+              <button id="receiptTip" type="button" class="mot-btn-info btn p-0 ml-2 d-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true" data-bs-custom-class="custom-tooltip" data-bs-title=" ">
+                <i class="bi bi-info-circle"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-4 d-flex justify-content-end my-1">
+            <input type="button" class="btn btn-primary btn-sm" id="E102BtnExportXlsx" value="匯出EXCEL"> &nbsp; <input type="button" class="btn btn-primary btn-sm" id="E102BtnImport" value="匯入"> &nbsp; <input type="button" class="btn btn-primary btn-sm" id="E102BtnConfirm" value="確認">
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div style="overflow: auto; width: 100%; max-height: 450px;">
+          <table id="E102Table" class="mot-table dataTable table-striped nowrap table-bordered " style="width:100%;">
+            <thead style="position: sticky; top: 0;">
+              <tr>
+                <th class="text-center">項次</th>
+                <th class="text-center">訂單編號</th>
+                <th class="text-center">配送狀態<br>配送訊息
+                </th>
+                <th class="text-center">約定配送日</th>
+                <th class="text-center">物流公司<br>配送單號
+                </th>
+                <th class="text-center">出貨包材</th>
+                <th class="text-center">包材類型</th>
+                <th class="text-center">包材重量</th>
+                <th class="text-center">訂單類別</th>
+                <th class="text-center">客戶配送需求</th>
+                <th class="text-center">發票開立統編</th>
+                <th class="text-center">廢四機回收</th>
+                <th class="text-center">轉單日</th>
+                <th class="text-center">最晚出貨日</th>
+                <th style="display: flex; justify-content: space-between; align-items: center;" class="text-center">
+                  <div>
+                    <input type="checkbox" class="form-check-input" id="E102CheckboxAllChangeAddress">
+                    <input type="button" class="btn btn-primary btn-sm mx-0" id="E102BtnAcceptChangeAddress" value="接受改址">
+                    <input type="button" class="btn btn-primary btn-sm mx-0" id="E102BtnRefuseChangeAddress" value="拒絕改址">
+                  </div>
+                  <div>
+                    收件人姓名<br>電話<br>地址
+                  </div>
+                </th>
+                <th class="text-center">商品原廠編號</th>
+                <th class="text-center">商品編號<br>商品名稱<br>單品規格
+                </th>
+                <th class="text-center">數量</th>
+                <th class="text-center">訂單金額</th>
+                <th class="text-center">商品屬性</th>
+                <th class="text-center">應稅(免稅)</th>
+                <th class="text-center">發票開立金額</th>
+                <th class="text-center">訂購人姓名</th>
+              </tr>
+            </thead>
+            <tbody id="E102Tbody"><tr class="odd" id="66022800812383-001" ordergoodsgb="0" agreeddeliveryyn="0"><td class="text-center">1</td><td name="fullOrderNo">66022800812383-001</td><td class="text-center"><select class="form-control form-control-sm E102SelectDeliveryStatus" style="width: 190px;"><option value="00">請回覆...</option><option value="10">已配送/可出貨</option><option value="20">電聯不上</option><option value="32">需配送加購協調中</option><option value="50">無貨取消訂單</option><option value="60">收件資料有誤/不配送地區</option><option value="98">商店備註</option></select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryMessage" value="" placeholder="輸入配送訊息..."><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryStatus" value="以下相同"></td><td class="text-center"></td><td class="text-center"><select class="form-control form-control-sm E102SelectDeliveryCompany" style="width: 190px;"><option value="">請選擇...</option><option value="11">宅配通</option><option value="12">新竹貨運</option><option value="13">統一速達</option><option value="14">大榮貨運</option><option value="15">東元物流</option><option value="16">順豐速運</option><option value="19">其他宅配</option><option value="31">郵局</option><option value="32">便利帶</option><option value="99">其他</option></select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryNo" value="" placeholder="輸入配送單號..."><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryCompany" value="以下相同"></td><td class="text-center"><select class="form-control form-control-sm E102SelectPackingType" style="width: 180px;"><option value="">請回覆...</option><option value="originalBox">原箱</option><option value="momoBoxOrBag">momo制式包材-紙箱(袋)</option><option value="momoWreckingBag">momo制式包材-破壞袋</option><option value="supplierBox">自有包材</option><option value="recycleBox">循環箱</option></select><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnPackingType" value="以下相同"></td><td class="text-center"><select disabled="" class="form-control form-control-sm" style="width: 190px;"><option value="">先選擇出貨包材...</option></select></td><td class="text-center">無</td><td>一般訂單</td><td></td><td>無需開立統編</td><td>否</td><td>2026/02/28 11:07</td><td>2026/03/03</td><td>
+                <div name="E102OriginReceiverDiv" class="d-flex flex-wrap">
+                    <div name="E102ReceiverName" class="w-100 text-center">石嘉茵</div>
+                    <div name="E102ReceiverTel" class="w-100 text-center">0971191888#8251293</div>
+                
+                            <div name="E102OriginReceiverAddressDiv" class="d-flex w-100">
+                                <div name="E102ReceiverAddress" class="w-100 text-center">407 台中市 西屯區 西屯路2段上石北五巷16號9樓之1</div>
+                            </div>
+                        </div></td><td></td><td>．TP00062760000001<br>．【Kenji 健司】金黃起司餅乾 28.5公克 X 45入(免運)<br>．無/無</td><td>1</td><td>439</td><td>一般</td><td>應稅</td><td>-</td><td>石嘉茵</td></tr><tr class="odd" id="66022800812383-002" ordergoodsgb="0" agreeddeliveryyn="0"><td class="text-center">2</td><td name="fullOrderNo">66022800812383-002</td><td class="text-center"><select class="form-control form-control-sm E102SelectDeliveryStatus" style="width: 190px;"><option value="00">請回覆...</option><option value="10">已配送/可出貨</option><option value="20">電聯不上</option><option value="32">需配送加購協調中</option><option value="50">無貨取消訂單</option><option value="60">收件資料有誤/不配送地區</option><option value="98">商店備註</option></select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryMessage" value="" placeholder="輸入配送訊息..."><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryStatus" value="以下相同"></td><td class="text-center"></td><td class="text-center"><select class="form-control form-control-sm E102SelectDeliveryCompany" style="width: 190px;"><option value="">請選擇...</option><option value="11">宅配通</option><option value="12">新竹貨運</option><option value="13">統一速達</option><option value="14">大榮貨運</option><option value="15">東元物流</option><option value="16">順豐速運</option><option value="19">其他宅配</option><option value="31">郵局</option><option value="32">便利帶</option><option value="99">其他</option></select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryNo" value="" placeholder="輸入配送單號..."><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryCompany" value="以下相同"></td><td class="text-center"><select class="form-control form-control-sm E102SelectPackingType" style="width: 180px;"><option value="">請回覆...</option><option value="originalBox">原箱</option><option value="momoBoxOrBag">momo制式包材-紙箱(袋)</option><option value="momoWreckingBag">momo制式包材-破壞袋</option><option value="supplierBox">自有包材</option><option value="recycleBox">循環箱</option></select><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnPackingType" value="以下相同"></td><td class="text-center"><select disabled="" class="form-control form-control-sm" style="width: 190px;"><option value="">先選擇出貨包材...</option></select></td><td class="text-center">無</td><td>一般訂單</td><td></td><td>無需開立統編</td><td>否</td><td>2026/02/28 11:07</td><td>2026/03/03</td><td>
+                <div name="E102OriginReceiverDiv" class="d-flex flex-wrap">
+                    <div name="E102ReceiverName" class="w-100 text-center">石嘉茵</div>
+                    <div name="E102ReceiverTel" class="w-100 text-center">0971191888#8251293</div>
+                
+                            <div name="E102OriginReceiverAddressDiv" class="d-flex w-100">
+                                <div name="E102ReceiverAddress" class="w-100 text-center">407 台中市 西屯區 西屯路2段上石北五巷16號9樓之1</div>
+                            </div>
+                        </div></td><td></td><td>．TP00062760000001<br>．【Kenji 健司】金黃起司餅乾 28.5公克 X 45入(免運)<br>．無/無</td><td>1</td><td>439</td><td>一般</td><td>應稅</td><td>-</td><td>石嘉茵</td></tr><tr class="odd" id="66022800812383-003" ordergoodsgb="3" agreeddeliveryyn="0"><td class="text-center">3</td><td name="fullOrderNo">66022800812383-003</td><td class="text-center">此為運費</td><td class="text-center"></td><td class="text-center">此為運費</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>一般訂單</td><td></td><td>無需開立統編</td><td>否</td><td>2026/02/28 11:07</td><td>2026/03/03</td><td>
+                <div name="E102OriginReceiverDiv" class="d-flex flex-wrap">
+                    <div name="E102ReceiverName" class="w-100 text-center">石嘉茵</div>
+                    <div name="E102ReceiverTel" class="w-100 text-center">0971191888#8251293</div>
+                
+                            <div name="E102OriginReceiverAddressDiv" class="d-flex w-100">
+                                <div name="E102ReceiverAddress" class="w-100 text-center">407 台中市 西屯區 西屯路2段上石北五巷16號9樓之1</div>
+                            </div>
+                        </div></td><td></td><td>．TP00062760000000<br>．運費<br>．無</td><td>1</td><td>0</td><td>運費</td><td>應稅</td><td>-</td><td>石嘉茵</td></tr><tr class="even" id="66022800813297-001" ordergoodsgb="0" agreeddeliveryyn="0"><td class="text-center">4</td><td name="fullOrderNo">66022800813297-001</td><td class="text-center"><select class="form-control form-control-sm E102SelectDeliveryStatus" style="width: 190px;"><option value="00">請回覆...</option><option value="10">已配送/可出貨</option><option value="20">電聯不上</option><option value="32">需配送加購協調中</option><option value="50">無貨取消訂單</option><option value="60">收件資料有誤/不配送地區</option><option value="98">商店備註</option></select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryMessage" value="" placeholder="輸入配送訊息..."><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryStatus" value="以下相同"></td><td class="text-center"></td><td class="text-center"><select class="form-control form-control-sm E102SelectDeliveryCompany" style="width: 190px;"><option value="">請選擇...</option><option value="11">宅配通</option><option value="12">新竹貨運</option><option value="13">統一速達</option><option value="14">大榮貨運</option><option value="15">東元物流</option><option value="16">順豐速運</option><option value="19">其他宅配</option><option value="31">郵局</option><option value="32">便利帶</option><option value="99">其他</option></select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryNo" value="" placeholder="輸入配送單號..."><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryCompany" value="以下相同"></td><td class="text-center"><select class="form-control form-control-sm E102SelectPackingType" style="width: 180px;"><option value="">請回覆...</option><option value="originalBox">原箱</option><option value="momoBoxOrBag">momo制式包材-紙箱(袋)</option><option value="momoWreckingBag">momo制式包材-破壞袋</option><option value="supplierBox">自有包材</option><option value="recycleBox">循環箱</option></select><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnPackingType" value="以下相同"></td><td class="text-center"><select disabled="" class="form-control form-control-sm" style="width: 190px;"><option value="">先選擇出貨包材...</option></select></td><td class="text-center">無</td><td>一般訂單</td><td></td><td>無需開立統編</td><td>否</td><td>2026/02/28 11:59</td><td>2026/03/11</td><td>
+                <div name="E102OriginReceiverDiv" class="d-flex flex-wrap">
+                    <div name="E102ReceiverName" class="w-100 text-center">魏惠君</div>
+                    <div name="E102ReceiverTel" class="w-100 text-center">0971191888#8218409</div>
+                
+                            <div name="E102OriginReceiverAddressDiv" class="d-flex w-100">
+                                <div name="E102ReceiverAddress" class="w-100 text-center">717 台南市 仁德區 保仁路120巷112弄16號</div>
+                            </div>
+                        </div></td><td></td><td>．TP00062760000071<br>．【東門興記】手工水餃 600g X 5 包  (高麗菜蝦仁)(免運)<br>．高麗菜蝦仁 5包/無</td><td>1</td><td>1488</td><td>一般</td><td>應稅</td><td>-</td><td>胡嘉</td></tr><tr class="even" id="66022800813297-002" ordergoodsgb="3" agreeddeliveryyn="0"><td class="text-center">5</td><td name="fullOrderNo">66022800813297-002</td><td class="text-center">此為運費</td><td class="text-center"></td><td class="text-center">此為運費</td><td class="text-center"></td><td class="text-center"></td><td class="text-center"></td><td>一般訂單</td><td></td><td>無需開立統編</td><td>否</td><td>2026/02/28 11:59</td><td>2026/03/11</td><td>
+                <div name="E102OriginReceiverDiv" class="d-flex flex-wrap">
+                    <div name="E102ReceiverName" class="w-100 text-center">魏惠君</div>
+                    <div name="E102ReceiverTel" class="w-100 text-center">0971191888#8218409</div>
+                
+                            <div name="E102OriginReceiverAddressDiv" class="d-flex w-100">
+                                <div name="E102ReceiverAddress" class="w-100 text-center">717 台南市 仁德區 保仁路120巷112弄16號</div>
+                            </div>
+                        </div></td><td></td><td>．TP00062760000000<br>．運費<br>．無</td><td>1</td><td>0</td><td>運費</td><td>應稅</td><td>-</td><td>胡嘉</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+		</div>
+		<input type="hidden" name="onlyQryDelyDateChg" value="">
+	</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var htmlPackingType = "";
+        var packingCatalog = "";
+        var tdNormalDeliveryStatus = "";
+        var tdAgreedDeliveryStatus = "";
+        var tdDeliveryCompany = "";
+        var cacheEditing = {};
+        var sIdno = "";
+
+        initPage();
+
+        function initPage() {
+
+            $("#E102Table th").addClass("text-center");
+            var endDate = new Date();
+            var startDate = new Date();
+            startDate.setDate(endDate.getDate() - 14);
+            console.log(startDate);
+            var endDateString = $.datepicker.formatDate("yy-mm-dd", endDate);
+            var startDateString = $.datepicker.formatDate("yy-mm-dd", startDate);
+            $("#E102InputStartDate").val(startDateString + "T00:00:00");
+            $("#E102InputEndDate").val(endDateString + "T23:59:59");
+            $("#E102BtnModalUploadFile").addClass("invisible-w0");
+
+            queryForPageInit();
+            setEntpReceiptIssue();
+        }
+
+        /** 顯示自行開立發票提醒資訊 */
+        function setEntpReceiptIssue() {
+            $.ajax({
+                async: false,
+                cache: false,
+                type: "post",
+                url: "/A201Servlet.do",
+                data: { doAction: "queryEnterprise" },
+                success: function (resp) {
+
+                    if (resp.data.receiptIssue === "2") {
+                        if (resp.data.noInvoicingYn === "是") {
+                            $("#receiptMsg").text("收據開立 : 由商店自行開立收據給消費者");
+                            $("#receiptTip").attr("data-bs-title", "1. 收據請隨箱出貨<br/>2. 收據若未隨箱出貨，請使用問問與客人聯繫收據補寄事宜");
+                            $("#E102DivModalReceiptMsg").text("提醒您，需由商店自行開立收據給消費者\r\n1. 收據請隨箱出貨\r\n2. 收據若未隨箱出貨，請使用問問與客人聯繫收據補寄事宜");
+                        } else {
+                            $("#receiptMsg").text("發票開立：需由商店自行開立發票給消費者，並確認「發票開立統編」欄位是否需開立統編");
+                            $("#receiptTip").attr("data-bs-title", "1. 發票請隨箱出貨<br/>2. 發票若未隨箱出貨，請使用問問與客人聯繫發票補寄事宜<br/>3. 如未開立將違反加值型及非加值型營業稅法，面臨該稅法<br/>第五十二條規定罰則");
+                            $("#E102DivModalReceiptMsg").text("提醒您，需由店家自行開立發票給消費者\r\n1. 發票請隨箱出貨\r\n2. 發票若未隨箱出貨，請使用問問與客人聯繫發票補寄事宜\r\n3. 如未開立將違反加值型及非加值型營業稅法，面臨該稅法第五十二條規定罰則");
+                        }
+                        $("#receiptTip").removeClass('d-none');
+                        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+                        const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function queryForPageInit() {
+            $.ajax({
+                async: false,
+                cache: false,
+                type: "post",
+                url: "/E102Servlet.do",
+                contentType: "application/json;charset=UTF-8",
+                data: JSON.stringify({ doAction: "PageInit" }),
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    generateHtmlPackingType(data.AllShippingPackingType.listType);
+                    packingCatalog = data.AllShippingPackingType.mapCatalog;
+                    generateTdDeliveryStatus(data.AllE102DeliveryStatus);
+                    generateHtmlDeliveryCompanies(data.AllE102DeliveryCompany.deliveryCompanies);
+
+                    checkIndexGoQuery();
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function checkIndexGoQuery() {
+            var requestData = {
+                "doAction": "CheckIndexGoQuery",
+            };
+            $.ajax({
+                cache: false,
+                type: "post",
+                url: "/E102Servlet.do",
+                contentType: "application/json",
+                data: JSON.stringify(requestData),
+                dataType: "json",
+                success: function (rtn) {
+                    console.log(JSON.stringify(rtn));
+                    if (rtn.result == "IndexGoE102QueryNotOverdue") {
+                        var today = new Date();
+                        var todayString = $.datepicker.formatDate("yy-mm-dd", today);
+                        $("#E102InputStartDate").val("");
+                        $("#E102InputEndDate").val("");
+                        $("#E102InputStartDateDelivery").val(todayString);
+                        $("#E102InputEndDateDelivery").val("");
+                        $("#E102BtnQuery").trigger("click");
+                        return;
+                    }
+                    if (rtn.result == "IndexGoE102QueryOverdue") {
+                        var today = new Date();
+                        today.setDate(today.getDate() - 1);
+                        var todayString = $.datepicker.formatDate("yy-mm-dd", today);
+                        $("#E102InputStartDate").val("");
+                        $("#E102InputEndDate").val("");
+                        $("#E102InputStartDateDelivery").val("");
+                        $("#E102InputEndDateDelivery").val(todayString);
+                        $("#E102BtnQuery").trigger("click");
+                        return;
+                    }
+                    if (rtn.result == "IndexGoE102QueryDeliveryDateChg") {
+                        var today = new Date();
+                        today.setDate(today.getDate() - 1);
+                        var todayString = $.datepicker.formatDate("yy-mm-dd", today);
+                        $("#E102InputStartDate").val("");
+                        $("#E102InputEndDate").val("");
+                        $("#E102InputStartDateDelivery").val("");
+                        $("#E102InputEndDateDelivery").val("");
+                        $('#E102SelectOrderType').val('AgreedDelivery');
+                        $('input[name="onlyQryDelyDateChg"]').val('Y');
+
+                        $("#E102BtnQuery").trigger("click");
+                        return;
+                    }
+                    if (rtn.result == "IndexGoHomeDeliveryChangeAddressQuery") {
+                        var todayEndTime = new Date();
+                        todayEndTime.setHours(23, 59, 59, 0);
+                        var year = todayEndTime.getFullYear();
+                        var month = (todayEndTime.getMonth() + 1).toString().padStart(2, '0'); // 月份從0開始計算，需加1並補零
+                        var day = todayEndTime.getDate().toString().padStart(2, '0'); // 補零到兩位數
+                        var hour = todayEndTime.getHours().toString().padStart(2, '0'); // 補零到兩位數
+                        var minute = todayEndTime.getMinutes().toString().padStart(2, '0'); // 補零到兩位數
+                        var second = todayEndTime.getSeconds().toString().padStart(2, '0'); // 補零到兩位數
+                        var todayString = year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second;
+                        $("#E102InputEndDate").val(todayString);
+                        $("#E102InputStartDate").val("");
+                        $('input[name="E102RadioChangedAddress"][value="applyChange"]').prop('checked', true);
+                        $("#E102BtnQuery").trigger("click");
+                        return;
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function generateHtmlDeliveryCompanies(companies) {
+            var html = '<select class="form-control form-control-sm E102SelectDeliveryCompany" style="width: 190px;">';
+            html += '<option value="">請選擇...</option>';
+            for (var i = 0; i < companies.length; i++) {
+                var company = companies[i];
+                html += '<option value="' + company.mgroup + '">' + company.codeName + '</option>';
+            }
+            html += '</select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryNo" value="" placeholder="輸入配送單號..." /><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryCompany" value="以下相同" />';
+
+            tdDeliveryCompany = html;
+        }
+
+        function generateHtmlPackingType(listType) {
+            if (listType == null) {
+                return;
+            }
+            var html = '<select class="form-control form-control-sm E102SelectPackingType" style="width: 180px;"><option value="">請回覆...</option>';
+            for (var i = 0; i < listType.length; i++) {
+                html += '<option value="' + listType[i].remark + '">' + listType[i].codeName + '</option>';
+            }
+            html += '</select><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnPackingType" value="以下相同" />';
+            htmlPackingType = html;
+            console.log(htmlPackingType);
+        }
+
+        function generateTdDeliveryStatus(deliveryStatus) {
+            var normalDeliveryStatus = deliveryStatus.listNormalDeliveryStatus;
+            var agreedDeliveryStatus = deliveryStatus.listAgreedDeliveryStatus;
+
+            var html = '<select class="form-control form-control-sm E102SelectDeliveryStatus" style="width: 190px;">';
+            html += '<option value="00">請回覆...</option>';
+
+            var html01 = html;
+            var html02 = html;
+            for (var i = 0; i < normalDeliveryStatus.length; i++) {
+                var status = normalDeliveryStatus[i];
+                html01 += '<option value="' + status.mgroup + '">' + status.codeName + '</option>';
+            }
+            html01 += '</select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryMessage" value="" placeholder="輸入配送訊息..." /><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryStatus" value="以下相同" />';
+
+            for (var i = 0; i < agreedDeliveryStatus.length; i++) {
+                var status = agreedDeliveryStatus[i];
+                html02 += '<option value="' + status.mgroup + '">' + status.codeName + '</option>';
+            }
+            html02 += '</select><input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryMessage" value="" placeholder="輸入配送訊息..." /><input type="button" class="btn btn-primary btn-sm mt-1 E102BtnDeliveryStatus" value="以下相同" />';
+
+            tdNormalDeliveryStatus = html01;
+            tdAgreedDeliveryStatus = html02;
+        }
+
+        function showTbodyAfterMainQuery(datas, isImport, isConfirm, errorCount) {
+            if (datas == null || datas.length == 0) {
+                if (isImport == false || isConfirm == false) {
+                    $("#E102ModalTitle").html("執行結果");
+                    $("#E102DivModalBody").html("無符合條件資料!");
+                    $("#E102DivModalDialog").modal("show");
+                    return;
+                }
+            }
+            sIdno = datas[0].sIdno;
+            var orderNo = "";
+            var trClass = "even";
+            var trCustClass = "even";
+            var theTbody = $("#E102Tbody");
+            console.log("cache>>>" + cacheEditing);
+
+            for (var i = 0; i < datas.length; i++) {
+                var data = datas[i];
+                console.log("data:" + JSON.stringify(data));
+                if (isImport == false) {
+                    var aCache = cacheEditing[data.fullOrderNo];
+                    if (aCache != null && aCache != undefined) {
+                        data.delayType = aCache.status;
+                        data.msgNote = aCache.message;
+                        //data.firstPromiseDate = aCache.date;
+                        if (isConfirm == undefined || isConfirm == false) {//若是"確認",則日期不使用cache(讓不合法的日期被清空或若之前就是指定配送日, 就回之前的指定日)
+                            data.inputDeliveryDate = aCache.date;
+                        }
+
+                        data.outDelyGb = aCache.company;
+                        data.slipNo = aCache.slip;
+                        data.shipPackingType = aCache.type;
+                        data.packingType = aCache.cata;
+                        data.packingUnit = aCache.weight;
+                    }
+                }
+                var tr;
+                if (data.fullOrderNo.split("-")[0] != orderNo) {
+                    orderNo = data.fullOrderNo.split("-")[0];
+                    if ("even" == trClass) {
+                        trClass = "odd";
+                    } else {
+                        trClass = "even";
+                    }
+                }
+
+                if (data.customerAskChg === true) {
+                    trCustClass = "customer-ask";
+                } else {
+                    trCustClass = trClass;
+                }
+
+                tr = '<tr class="' + trCustClass + '" id="' + data.fullOrderNo + '" orderGoodsGb="' + data.orderGoodsGb + '" agreedDeliveryYn="' + data.agreedDeliveryYn + '"></tr>';
+
+                var minDateStr = chgDateSplitToDash(data.lastProcDate.substring(0, 10));
+                var maxDateStr = chgDateSplitToDash(data.allowEndDate);
+                var inputDeliveryDate = chgDateSplitToDash(data.inputDeliveryDate);
+
+                var changedReceiverAddressElement = '';
+                changedReceiverAddressElement=`
+                <div name="E102OriginReceiverDiv" class="d-flex flex-wrap">
+                    <div name="E102ReceiverName" class="w-100 text-center">${data.receiverName}</div>
+                    <div name="E102ReceiverTel" class="w-100 text-center">${data.receiverTel}</div>
+                `
+                if (data.changedAddressStatus === 'applyChange') {
+                    changedReceiverAddressElement += `
+                            <div name="E102OriginReceiverAddressDiv" class="d-flex w-100">
+                                <input type="checkbox" name="E102CheckboxForChangeAddress" class="form-check-input" style="margin-right: 10px" />
+                                <div name="E102ReceiverAddress" class="w-100 text-center">
+                                    ${data.receiverAddr}
+                                </div>
+                            </div>
+                        </div>
+						<div name="E102ChangedReceiverDiv" class="d-flex flex-wrap">
+                            <div name="E102ChangedReceiverName" class="w-100 text-center" style="display: none">${data.changedReceiverName}</div>
+                            <div name="E102ChangedReceiverTel" class="w-100 text-center" style="display: none">${data.changedReceiverTel}</div>
+                            <div name="E102ChangedReceiverAddressDiv" class="d-flex w-100">
+                                <span class="badge rounded-pill text-bg-gray">新地址</span>
+                                <div name="E102ChangedReceiverAddress" class="d-flex w-100">
+                                    ${data.changedReceiverAddr}
+                                </div>
+                            </div>
+						</div>`;
+                } else if (data.changedAddressStatus === 'alreadyChange') {
+                    changedReceiverAddressElement += `
+                            <div name="E102ChangedReceiverAddressDiv" class="d-flex w-100">
+                                <span class="badge rounded-pill text-bg-gray">新地址</span>
+                                <div name="E102ReceiverAddress" class="d-flex justify-content-end w-100">
+                                    ${data.receiverAddr}
+                                </div>
+                            </div>
+                        </div>`;
+                } else {
+                    changedReceiverAddressElement += `
+                            <div name="E102OriginReceiverAddressDiv" class="d-flex w-100">
+                                <div name="E102ReceiverAddress" class="w-100 text-center">${data.receiverAddr}</div>
+                            </div>
+                        </div>`;
+                }
+                var html =
+                    '<td class="text-center">' + (i + 1) + '</td>' +
+                    '<td name="fullOrderNo">' + data.fullOrderNo + '</td>' +
+                    '<td class="text-center">' + (data.goodsGb == "運費" ? "此為運費" : data.agreedDeliveryDesc == "一般訂單" ? tdNormalDeliveryStatus : tdAgreedDeliveryStatus) + '</td>' +
+                    '<td class="text-center">' + (data.goodsGb == "運費" ? "" : data.agreedDeliveryDesc == "一般訂單" ? "" : '<input type="date" class="form-control form-control-sm mt-1 E102InputDeliveryDate" value="' + inputDeliveryDate + '" min="' + minDateStr + '" max="' + maxDateStr + '"  disabled />') + '</td>' +
+                    '<td class="text-center">' + (data.goodsGb == "運費" ? "此為運費" : tdDeliveryCompany) + '</td>' +
+                    (data.goodsGb == "運費" ? '<td class="text-center"></td>' : ('<td class="text-center">' + htmlPackingType + '</td>')) +
+                    (data.goodsGb == "運費" ? '<td class="text-center"></td>' : ('<td class="text-center"><select disabled class="form-control form-control-sm" style="width: 190px;"><option value="">先選擇出貨包材...</option></select></td>')) +
+                    (data.goodsGb == "運費" ? '<td class="text-center"></td>' : ('<td class="text-center">無</td>')) +
+                    '<td>' + data.agreedDeliveryDesc + '</td>' +
+                    '<td>' + data.custContent + '</td>' +
+                    '<td>' + (data.corpSIdno == '' ? '無需開立統編' : '統編:' + data.corpSIdno + '<br>公司名稱:' + data.corpName) + '</td>' +
+                    '<td>' + data.discMachReturnYn + '</td>' +
+                    '<td>' + data.lastProcDate + '</td>' +
+                    '<td>' + data.delyPlanDate + '</td>' +
+                    '<td>' + changedReceiverAddressElement + '</td>' +
+                    '<td>' + data.entpGoodsNo + '</td>' +
+                    '<td>．' + data.goodsCode + '<br />．' + data.goodsName + '<br />．' + data.goodsdtInfo + '</td>' +
+                    '<td>' + data.syslast + '</td>' +
+                    '<td>' + data.syslastAmt + '</td>' +
+                    '<td>' + data.goodsGb + '</td>' +
+                    '<td>' + data.vatRate + '</td>' +
+                    '<td>' + data.invoiceAmt + '</td>' +
+                    '<td>' + data.custName + '</td>';
+
+                theTbody.append($(tr).html(html));
+
+                var lastTr = theTbody.find("tr:last-child");
+                if (data.shipPackingType != "") {
+                    lastTr.find("select.E102SelectPackingType").val(data.shipPackingType).trigger("change");
+                }
+                var packingTypeValue = data.packingType;
+                if (lastTr.find("select.E102SelectPackingCatalog").length > 0 && packingTypeValue != "") {
+                    if (isImport) {
+                        var cata = packingCatalog[data.shipPackingType];
+                        for (var j = 0; j < cata.length; j++) {
+                            var sname = cata[j].codeSname;
+                            if (sname != null && sname != "null") {
+                                sname = '(' + sname + ')';
+                            } else {
+                                sname = "";
+                            }
+                            var temp = cata[j].codeName + sname;
+                            if (data.shipPackingType == "supplierBox") {
+                                temp = cata[j].codeName;
+                            }
+                            if (temp.includes(packingTypeValue)) {
+                                packingTypeValue = temp;
+                                break;
+                            }
+                        }
+                    }
+                    console.log("packingTypeValue:" + packingTypeValue);
+                    lastTr.find("select.E102SelectPackingCatalog").val(packingTypeValue).trigger("change");
+                }
+                if (lastTr.find("input.E102InputPackingWeight").length > 0 && data.packingUnit != "" && data.packingUnit != "無") {
+                    lastTr.find("input.E102InputPackingWeight").val(data.packingUnit);
+                }
+                if (data.delayType != "") {
+                    lastTr.find("select.E102SelectDeliveryStatus").val(data.delayType).trigger("change");
+                    if (data.delayType == "30") {
+                        //if(lastTr.find("input.E102InputDeliveryDate").length>0 && data.firstPromiseDate!=""){
+                        //lastTr.find("input.E102InputDeliveryDate").val(data.firstPromiseDate);
+                        //}
+                        if (lastTr.find("input.E102InputDeliveryDate").length > 0 && inputDeliveryDate != "") {
+                            lastTr.find("input.E102InputDeliveryDate").val(inputDeliveryDate);
+                        } else {
+                            lastTr.find("input.E102InputDeliveryDate").val("");
+                        }
+                    }
+                }
+                if (data.msgNote != "" && lastTr.find("input.E102InputDeliveryMessage").length > 0) {
+                    lastTr.find("input.E102InputDeliveryMessage").val(data.msgNote);
+                }
+                lastTr.find("select.E102SelectDeliveryCompany").val(data.outDelyGb);
+                lastTr.find("input.E102InputDeliveryNo").val(data.slipNo);
+                lastTr.find("select.E102SelectPackingType").val(data.shipPackingType);
+                lastTr.find("select.E102SelectPackingCatalog") == undefined ? lastTr.find("td:eq(6)").html(packingTypeValue) : lastTr.find("select.E102SelectPackingCatalog").val(packingTypeValue);
+                lastTr.find("input.E102InputPackingWeight") == undefined ? lastTr.find("td:eq(7)").html(data.packingUnit) : lastTr.find("input.E102InputPackingWeight").val(data.packingUnit);
+            }
+            cacheEditing = {};
+
+            if (isConfirm == true) {
+                return;
+            }
+
+            if (isImport == false) {
+                $("#E102ModalTitle").html("執行結果");
+                $("#E102DivModalBody").html("查詢資料，共" + datas.length + "筆");
+                $("#E102DivModalDialog").modal("show");
+            } else {
+                $("#E102ModalTitle").html("執行結果");
+                $("#E102DivModalBody").html("「儲存訊息」成功：" + datas.length + "筆，失敗：" + errorCount + "筆");
+                $("#E102DivModalDialog").modal("show");
+            }
+            return;
+        }
+
+        function handlerConfirmDeliveryResults(datas, delivery10ErrorHtml) {
+            if ((datas == null || datas.length == 0) && delivery10ErrorHtml == "") {
+                $("#E102ModalTitle").html("執行結果");
+                $("#E102DivModalBody").html("「儲存訊息」成功：0筆，失敗：0筆");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+            var countSuccess = 0;
+            var countFail = 0;
+            var domTr;
+            var domTds;
+            var resultHtml = delivery10ErrorHtml;
+            var delivery10Error = 0;
+            if (delivery10ErrorHtml.length > 0) {
+                delivery10Error = delivery10ErrorHtml.split("br").length - 1;
+            }
+            countFail += delivery10Error;
+            for (var i = 0; i < datas.length; i++) {
+                var data = datas[i];
+                var fullOrderNo = data.orderNo + "-" + data.orderG
+                var success = data.success;
+                if (success == "false") {
+                    countFail += 1;
+                    if (data.message != null && data.message != undefined && data.message != "") {
+                        resultHtml += ("訂單編號：" + fullOrderNo + "，" + data.message + "<br/>");
+                        continue;
+                    }
+                } else {
+                    countSuccess += 1;
+                }
+            }
+            resultHtml = "「儲存訊息」成功：" + countSuccess + "筆，失敗：" + countFail + "筆<br/>" + resultHtml;
+            $("#E102ModalTitle").html("執行結果");
+            $("#E102DivModalBody").html(resultHtml);
+            $("#E102DivModalReceiptMsg").removeClass("invisible-w0");
+            $("#E102DivModalDialog").modal("show");
+            //e102BtnQuery(true);
+            $("#E102DivModalDialog").on('hidden.bs.modal', function (e) {
+                $("#E102DivModalDialog").off('hidden.bs.modal');
+                $("#E102DivModalReceiptMsg").addClass("invisible-w0");
+                e102BtnQuery(true);
+            });
+        }
+
+        function replaceHtmlWord(str) {
+            if (str === null || str === undefined || str === "") {
+                return "";
+            }
+            return str.replace(/<|&lt;/g, '#6a#').replace(/>|&gt;/g, '#6b#').replace(/'/g, '#6c#');
+        }
+
+        function exportExcel() {
+            var domTrs = $("#E102Tbody").children("tr");
+            if (domTrs.length == 0) {
+                $("#E102ModalTitle").html("執行結果");
+                $("#E102DivModalBody").html("請先查詢資料!");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+            var datas = new Array();
+            for (var i = 0; i < domTrs.length; i++) {
+                var domTr = $(domTrs[i]);
+                var data = new Object();
+                var domTds = domTr.children("td");
+                data["shipPackingType"] = domTds.eq(5).find("select.E102SelectPackingType").find(":selected").text();
+                if (data["shipPackingType"] == "請回覆...") {
+                    data["shipPackingType"] = "";
+                }
+                data["packingType"] = domTds.eq(6).find("select.E102SelectPackingCatalog").length > 0 ? domTds.eq(6).find("select.E102SelectPackingCatalog").find(":selected").text() : domTds.eq(6).find("select").length > 0 ? domTds.eq(6).find("select").val() : domTds.eq(6).html();
+                data["packingUnit"] = domTds.eq(7).find("input.E102InputPackingWeight").length > 0 ? domTds.eq(7).find("input.E102InputPackingWeight").val() : domTds.eq(7).html();
+                data["fullOrderNo"] = domTds.eq(1).html();
+                data["delayType"] = domTds.eq(2).find("select.E102SelectDeliveryStatus").find(":selected").text();
+                if (data["delayType"] == "請回覆...") {
+                    data["delayType"] = "";
+                }
+                data["msgNote"] = domTds.eq(2).find("input.E102InputDeliveryMessage").length > 0 ? domTds.eq(2).find("input.E102InputDeliveryMessage").val() : "";
+                data["firstPromiseDate"] = domTds.eq(3).find("input.E102InputDeliveryDate").length > 0 ? chgDateSplitToSlash(domTds.eq(3).find("input.E102InputDeliveryDate").val()) : "";
+                data["outDelyGb"] = domTds.eq(4).find("select.E102SelectDeliveryCompany").find(":selected").text();
+                if (data["outDelyGb"] == "請選擇...") {
+                    data["outDelyGb"] = "";
+                }
+                data["slipNo"] = domTds.eq(4).find("input.E102InputDeliveryNo").val();
+                data["orderType"] = domTds.eq(8).html();
+                data["custMsg"] = replaceHtmlWord(domTds.eq(9).html());
+                data["corpInvoice"] = replaceHtmlWord(domTds.eq(10).html().replaceAll('<br>','\n'));
+                data["trash4"] = domTds.eq(11).html();
+                data["payDate"] = domTds.eq(12).html();
+                data["deliveryDate"] = domTds.eq(13).html();
+                var receiver = domTr.find("div[name='E102ReceiverName']").text().trim();;
+                data["receiver"] = receiver;
+                var address = domTr.find("div[name='E102ReceiverAddress']").text().trim();;
+                var ivrTel = domTr.find("div[name='E102ReceiverTel']").text().trim();;
+                try {
+                    data["ivr"] = ivrTel;
+                } catch (e) {
+                    data["ivr"] = "";
+                }
+                data["address"] = address;
+                data["entpGoodsCode"] = replaceHtmlWord(domTds.eq(15).html());
+                var goods = domTds.eq(16).html().split("<br>");
+                data["goods"] = goods[0];
+                try {
+                    data["goodsName"] = replaceHtmlWord(goods[1]);
+                } catch (e) {
+                    data["goodsName"] = "";
+                }
+                try {
+                    data["goodsDetail"] = replaceHtmlWord(goods[2]);
+                } catch (e) {
+                    data["goodsDetail"] = "";
+                }
+                data["qty"] = domTds.eq(17).html();
+                data["orderAmt"] = domTds.eq(18).html();
+                data["goodsType"] = domTds.eq(19).html();
+                data["tax"] = domTds.eq(20).html();
+                data["invoiceAmt"] = domTds.eq(21).html();
+                data["customer"] = domTds.eq(22).html();
+                datas.push(data);
+            }
+
+            var request = new Object();
+            request["datas"] = datas;
+            request["doAction"] = "ExportExcel";
+            request["sIdno"] = sIdno;
+
+            console.log(request);
+
+            $.ajax({
+                cache: false,
+                type: "post",
+                url: "/E102Servlet.do",
+                contentType: "application/json;charset=UTF-8",
+                data: JSON.stringify(request),
+                dataType: "json",
+                success: function (ret) {
+                    console.log(ret);
+                    window.open("/E102Servlet.do?file=" + ret.excelFileName, "_new");
+                    $("#E102ModalTitle").html("執行結果");
+                    $("#E102DivModalBody").html("檔案需輸入密碼才能開啟<br/>※密碼為店家統編");
+                    $("#E102DivModalDialog").modal("show");
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+
+        }
+
+        $("#E102BtnImport").off("click").on("click", function () {
+            $("#E102DivModalBody").html('<input type="file" class="form-control form-control-sm E102FileImport" placeholder="選取匯入檔案..." />輸入密碼<input type="password" class="form-control form-control-sm E102FileImportPassword" placeholder="輸入解壓縮密碼..." value="" />');
+            $("#E102BtnModalUploadFile").removeClass("invisible-w0");
+            $("#E102DivModalReceiptMsg").addClass("invisible-w0");
+            $("input.E102FileImportPassword:first").val("");
+            $("#E102DivModalDialog").modal("show");
+        });
+
+		$("#E102DivModalDialog").off("click", "#E102BtnModalUploadFile").on("click", "#E102BtnModalUploadFile", function(){
+			console.log("upload file");
+			var file = $("input.E102FileImport")[0].files[0];
+			var extractKey = $("input.E102FileImportPassword:first").val();
+			if(file==null){
+				return;
+			}
+			$("#E102Tbody").empty();
+			var formData = new FormData();
+			formData.append("uploadFile", file);
+			formData.append("doAction", "ImportExcel");
+			formData.append("extractKey", extractKey);
+			$.ajax({
+				cache : false,
+				type : "post",
+				url : "/E102Servlet.do",
+				processData: false,
+				contentType : false,
+				data : formData,
+				success : function(ret) {
+					ret = JSON.parse(ret);
+					if(ret.message){ // 預期內例外給200，並印出該訊息
+						$("#E102BtnModalUploadFile").addClass("invisible-w0");
+						$("#E102DivModalReceiptMsg").addClass("invisible-w0");
+						$("#E102DivModalBody").html(ret.message);
+						$("#E102DivModalDialog").modal("show");
+						return;
+					}
+					$("#E102BtnModalUploadFile").addClass("invisible-w0");
+					$("#E102DivModalReceiptMsg").addClass("invisible-w0");
+					showTbodyAfterMainQuery(ret.datas, true, false, ret.errorCount);
+				},
+				error : function(error) {
+					console.log(error);
+					var errorMessage = JSON.parse(error.responseText).message;
+					if(!errorMessage || errorMessage.trim() === ""){ // 處理 null、undefined、""、"  "
+						errorMessage = "系統發生錯誤";
+					}
+					$("#E102BtnModalUploadFile").addClass("invisible-w0");
+					$("#E102DivModalReceiptMsg").addClass("invisible-w0");
+					$("#E102DivModalBody").html(errorMessage);
+					$("#E102DivModalDialog").modal("show");
+				}
+			});
+		});
+
+        $("#E102BtnExportXlsx").off("click").on("click", function () {
+            exportExcel();
+        });
+
+        $("#E102BtnQuery").off("click").on("click", function () {
+            $("#E102BtnToggleQuery").trigger("click");
+            e102BtnQuery();
+        });
+
+        function e102BtnQuery(isConfirm) {
+
+            //查詢時4格日期至少填一格
+            var onlyQryDelyDateChg = $('input[name="onlyQryDelyDateChg"]').val();
+            if (onlyQryDelyDateChg != "Y") {
+                if ($("#E102InputStartDate").val() == "" && $("#E102InputEndDate").val() == "" &&
+                    $("#E102InputStartDateDelivery").val() == "" && $("#E102InputEndDateDelivery").val() == "") {
+
+                    var endDate = new Date();
+                    var startDate = new Date();
+                    startDate.setDate(endDate.getDate() - 14);
+                    console.log(startDate);
+                    var endDateString = $.datepicker.formatDate("yy-mm-dd", endDate);
+                    var startDateString = $.datepicker.formatDate("yy-mm-dd", startDate);
+                    $("#E102InputStartDate").val(startDateString + "T00:00:00");
+                    $("#E102InputEndDate").val(endDateString + "T23:59:59");
+
+
+                    //$("#E102ModalTitle").html("網頁訊息");
+                    //$("#E102DivModalBody").html("請輸入轉單日或最晚出貨日");
+                    //$("#E102DivModalDialog").modal("show");
+                    //return;
+                }
+            }
+
+            cacheEditing = {};
+            var trs = $("#E102Tbody tr");
+            if (trs != null && trs != undefined && trs.length > 0) {
+                for (var i = 0; i < trs.length; i++) {
+                    var tr = $(trs[i]);
+                    cacheEditing[tr.children("td:eq(1)").html()] = {
+                        status: tr.find("select.E102SelectDeliveryStatus") == undefined ? "" : tr.find("select.E102SelectDeliveryStatus").val()
+                        , message: tr.find("input.E102InputDeliveryMessage") == undefined ? "" : tr.find("input.E102InputDeliveryMessage").val()
+                        , date: tr.find("input.E102InputDeliveryDate") == undefined ? "" : tr.find("input.E102InputDeliveryDate").val()
+                        , company: tr.find("select.E102SelectDeliveryCompany") == undefined ? "" : tr.find("select.E102SelectDeliveryCompany").val()
+                        , slip: tr.find("input.E102InputDeliveryNo") == undefined ? "" : tr.find("input.E102InputDeliveryNo").val()
+                        , type: tr.find("select.E102SelectPackingType") == undefined ? "" : tr.find("select.E102SelectPackingType").val()
+                        , cata: tr.find("select.E102SelectPackingCatalog") == undefined ? tr.find("td:eq(6)").html() : tr.find("select.E102SelectPackingCatalog").val()
+                        , weight: tr.find("input.E102InputPackingWeight") == undefined ? tr.find("td:eq(7)").html() : tr.find("input.E102InputPackingWeight").val()
+                    };
+                }
+            }
+            console.log("cache>>>" + cacheEditing);
+
+            $("#E102Tbody").empty();
+            var startDate = $("#E102InputStartDate").val();
+            var endDate = $("#E102InputEndDate").val();
+            var startDateDelivery = $("#E102InputStartDateDelivery").val();
+            var endDateDelivery = $("#E102InputEndDateDelivery").val();
+            var receiverName = $("#E102InputReceiverName").val();
+            var goodsCode = $("#E102InputGoodsCode").val();
+            var entpGoodsNo = $("#E102InputEntpGoodsNo").val();
+            var orderNo = $("#E102InputOrderNo").val();
+            var trash4 = $("input[name='E102RadioTrash4']:checked").val();
+            var orderType = $("#E102SelectOrderType").val();
+            var changedAddressStatus = $("input[name='E102RadioChangedAddress']:checked").val();
+            var request = {
+                startDate: startDate
+                , endDate: endDate
+                , startDateDelivery: startDateDelivery
+                , endDateDelivery: endDateDelivery
+                , receiverName: receiverName
+                , goodsCode: goodsCode
+                , entpGoodsNo: entpGoodsNo
+                , orderNo: orderNo
+                , trash4: trash4
+                , orderType: orderType
+                , changedAddressStatus: changedAddressStatus
+            };
+
+            if (onlyQryDelyDateChg == "Y") {
+                request.doAction = "QueryDateChgOnly";
+                $('input[name="onlyQryDelyDateChg"]').val("");
+            } else {
+                request.doAction = "MainQuery";
+            }
+
+            console.log(request);
+            $.ajax({
+                cache: false,
+                type: "post",
+                url: "/E102Servlet.do",
+                contentType: "application/json;charset=UTF-8",
+                data: JSON.stringify(request),
+                dataType: "json",
+                success: function (ret) {
+                    console.log(ret);
+                    showTbodyAfterMainQuery(ret.datas, false, isConfirm, 0);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        var dateHandleEvent = function (event) {
+            var fullOrderNo = $(this).parent().parent().children("td:eq(1)").html();
+            var dateInput = $(this).parent().parent().find('input.E102InputDeliveryDate');
+            var eventType = event.type;
+
+            var request = {
+                doAction: "CheckDeliveryDate"
+                , fullOrderNo: fullOrderNo
+                , deliveryDate: dateInput.val()
+            };
+
+            $.ajax({
+                cache: false,
+                type: "post",
+                url: "/E102Servlet.do",
+                contentType: "application/json;charset=UTF-8",
+                data: JSON.stringify(request),
+                dataType: "json",
+                success: function (ret) {
+
+                    if (ret == null || ret.length == 0) {
+                        $("#E102ModalTitle").html("執行結果");
+                        $("#E102DivModalBody").html("查無符合條件約配品");
+                        dateInput.val('');
+                        $("#E102DivModalDialog").modal("show");
+                        return;
+                    } else {
+                        if (ret.canChangeDeliveryDate == false) {
+                            $("#E102ModalTitle").html("執行結果");
+                            $("#E102DivModalBody").html("客指定日修改次數超過限制!");
+                            dateInput.val(ret.delyPlanDate);
+                            $("#E102DivModalDialog").modal("show");
+
+                            //防止日棋盤在click事件時被打開, 需先將输入類型改為text，然後在 blur 事件時將輸入事件改為date
+                            dateInput.attr('type', 'text');
+                            dateInput.one('blur', function () {
+                                $(this).attr('type', 'date');
+                            });
+
+                            return;
+                        }
+                        if (eventType == 'change') {
+                            if (ret.validDeliveryDate == false) {
+                                $("#E102ModalTitle").html("執行結果");
+                                $("#E102DivModalBody").html("指定日不可小於今日");
+                                dateInput.val(ret.delyPlanDate);
+                                $("#E102DivModalDialog").modal("show");
+                                return;
+                            }
+                        }
+
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        };
+
+        $("#E102Tbody").off("click", "input.E102InputDeliveryDate").on("click", "input.E102InputDeliveryDate", dateHandleEvent);
+        $("#E102Tbody").off("change", "input.E102InputDeliveryDate").on("change", "input.E102InputDeliveryDate", dateHandleEvent);
+
+        $("#E102Tbody").off("change", "select.E102SelectPackingType").on("change", "select.E102SelectPackingType", function () {
+            var value = $(this).val();
+            var next = $(this).parent().next();
+            next.html("");
+            if (value == "") {
+                next.append('<select disabled class="form-control form-control-sm" style="width: 190px;"><option value="">先選擇出貨包材...</option></select>');
+                next.next().empty().html("無");
+                return;
+            }
+            if (value == "recycleBox") {
+                next.html("循環箱");
+                next.next().empty().html("無");
+                return;
+            }
+            if (value == "originalBox") {
+                next.html("原箱");
+                next.next().empty().html("無");
+                return;
+            }
+            var catalog = "";
+            if (value == "momoBoxOrBag") {
+                catalog = packingCatalog.momoBoxOrBag;
+                next.next().empty().html("先選擇包材類型...");
+            }
+            if (value == "supplierBox") {
+                catalog = packingCatalog.supplierBox;
+                next.next().empty().html('<div class="d-flex" style="width: 140px;"><input type="number" class="form-control form-control-sm mx-0 E102InputPackingWeight" value="" placeholder="輸入包材重量..." />公克</div>');
+            }
+            if (value == "momoWreckingBag") {
+                catalog = packingCatalog.momoWreckingBag;
+                next.next().empty().html("先選擇包材類型...");
+            }
+            var html = '<option value="">請回覆</option>';
+            for (var i = 0; i < catalog.length; i++) {
+                var sname = catalog[i].codeSname;
+                if (sname != null && sname != "null") {
+                    sname = '(' + sname + ')';
+                } else {
+                    sname = "";
+                }
+                var temp = catalog[i].codeName + sname;
+                if (value == "supplierBox") {
+                    temp = catalog[i].codeName;
+                }
+                html += '<option value="' + temp + '">' + temp + '</option>';
+            }
+            html = '<select class="form-control form-control-sm E102SelectPackingCatalog" style="width: 190px;">' + html + '<input type="button" class="btn btn-primary btn-sm mt-1 E102BtnPackingCatalog" value="以下相同" /></select>';
+            next.html(html);
+            return;
+        });
+
+        $("#E102Tbody").off("change", "input.E102InputPackingWeight").on("change", "input.E102InputPackingWeight", function () {
+            var value = $(this).val();
+            if (isNaN(value)) {
+                $(this).val("");
+                $("#E102DivModalBody").html("只能輸入數字!");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+            if (value > 9999999) {
+                $(this).val("");
+                $("#E102DivModalBody").html("最大數字長度 7 !");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+            if (value < 0) {
+                $(this).val("");
+                $("#E102DivModalBody").html("重量不可為負數!");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+            if (value.includes(".") && value.length > 8) {
+                $(this).val("");
+                $("#E102DivModalBody").html("最大數字長度 7 !");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+        });
+
+        $("#E102Tbody").off("change", "select.E102SelectPackingCatalog").on("change", "select.E102SelectPackingCatalog", function () {
+            var value = $(this).val();
+            console.log("value:" + value);
+            if (value == "" || value == null || value == undefined) {
+                $(this).parent().next().html("先選擇包材類型...");
+                return;
+            }
+            var valueType = $(this).parent().prev().children("select.E102SelectPackingType").val();
+            console.log("valueType:" + valueType);
+            if (valueType == "momoBoxOrBag" || valueType == "momoWreckingBag") {
+                var catalogs = packingCatalog[valueType];
+                console.log(catalogs);
+                for (var i = 0; i < catalogs.length; i++) {
+                    var sname = catalogs[i].codeSname;
+                    console.log(sname + "_" + value);
+                    if (value.indexOf(sname) >= 0) {
+                        var weight = catalogs[i].remark2;
+                        if (weight == null || weight == "") {
+                            weight = "0";
+                        }
+                        $(this).parent().next().html(weight + "公克");
+                        break;
+                    }
+                }
+                return;
+            }
+            if (valueType == "supplierBox") {
+                $(this).parent().next().html('<div class="d-flex" style="width: 140px;"><input type="number" class="form-control form-control-sm mx-0 E102InputPackingWeight" value="" min="1" max="9999999" placeholder="輸入包材重量..." />公克</div>');
+                return;
+            }
+            if (valueType == "originalBox" || valueType == "recycleBox") {
+                $(this).parent().next().html("無");
+                return;
+            }
+        });
+
+        $("#E102Tbody").off("click", "input.E102BtnPackingType").on("click", "input.E102BtnPackingType", function () {
+            var value = $(this).prev().val();
+            var trIndex = $(this).parent().parent().index();
+            var allTrs = $(this).parent().parent().parent().children("tr");
+            for (var i = 0; i < allTrs.length; i++) {
+                if (i <= trIndex) {
+                    continue;
+                }
+                var tr = allTrs[i];
+                $(tr).children("td:eq(5)").children("select.E102SelectPackingType").val(value).trigger("change");
+            }
+        });
+
+        $("#E102Tbody").off("click", "input.E102BtnPackingCatalog").on("click", "input.E102BtnPackingCatalog", function () {
+            var valueCatalog = $(this).prev().val();
+            var htmlWeight = $(this).parent().next().html();
+            console.log(htmlWeight);
+            var valueWeight = "";
+            if ($(this).parent().next().children("div") != undefined) {
+                valueWeight = $(this).parent().next().children("div").children("input").val();
+            }
+            console.log(valueWeight);
+            var valueType = $(this).parent().prev().children("select.E102SelectPackingType").val();
+            var trIndex = $(this).parent().parent().index();
+            var allTrs = $(this).parent().parent().parent().children("tr");
+            for (var i = 0; i < allTrs.length; i++) {
+                if (i <= trIndex) {
+                    continue;
+                }
+                var tr = allTrs[i];
+                $(tr).children("td:eq(5)").children("select.E102SelectPackingType").val(valueType).trigger("change");
+                $(tr).children("td:eq(6)").children("select.E102SelectPackingCatalog").val(valueCatalog);
+                $(tr).children("td:eq(7)").html(htmlWeight);
+                if (valueWeight != "") {
+                    $(tr).children("td:eq(7)").children("div").children("input").val(valueWeight);
+                }
+            }
+        });
+
+        $("#E102Tbody").off("change", "select.E102SelectDeliveryStatus").on("change", "select.E102SelectDeliveryStatus", function () {
+            var value = $(this).val();
+            console.log(value);
+            if (value == "10") {
+                $(this).parent("td:first").find("input.E102InputDeliveryMessage").remove();
+            } else {
+                if ($(this).parent("td:first").find("input.E102InputDeliveryMessage").length == 0) {
+                    $('<input type="text" class="form-control form-control-sm mt-1 E102InputDeliveryMessage" value="" placeholder="輸入配送訊息..." />').insertAfter(this);
+                }
+            }
+            var dateString = $.datepicker.formatDate("yy-mm-dd", new Date());
+            var dateInput = $(this).parent("td:first").next().find('input.E102InputDeliveryDate');
+            //	30指定配送日，選日期
+            if (value == "30") {
+                dateInput.prop('disabled', false);//啟用日期
+                dateInput.val(dateString);
+                return;
+            }
+            //	非30指定配送日，移除日期
+            dateInput.prop('disabled', true);
+            dateInput.val("");
+        });
+
+        $("#E102Tbody").off("click", "input.E102BtnDeliveryStatus").on("click", "input.E102BtnDeliveryStatus", function () {
+            var valueStatus = $(this).parent("td:first").find("select.E102SelectDeliveryStatus").val();
+            var valueMessage = $(this).parent("td:first").find("input.E102InputDeliveryMessage").val();
+            var valueDate = $(this).parent("td:first").next().find("input.E102InputDeliveryDate").val();
+            var domAll = $(this).parent("td:first").html();
+            var valueAgreedDeliveryYn = $(this).parent("td:first").parent("tr:first").children("td:eq(8)").html();
+            var trIndex = $(this).parent().parent().index();
+            var allTrs = $(this).parent().parent().parent().children("tr");
+            for (var i = 0; i < allTrs.length; i++) {
+                if (i <= trIndex) {
+                    continue;
+                }
+                var tr = allTrs[i];
+                console.log("運費：" + ("此為運費" == $(tr).children("td:eq(2)").html()));
+                if ("此為運費" == $(tr).children("td:eq(2)").html()) {
+                    continue;
+                }
+                if (valueAgreedDeliveryYn == $(tr).children("td:eq(8)").html()) {
+                    $(tr).children("td:eq(2)").html(domAll);
+                    if (valueStatus != undefined) {
+                        $(tr).children("td:eq(2)").find("select.E102SelectDeliveryStatus").val(valueStatus);
+                    }
+                    if (valueMessage != undefined) {
+                        $(tr).children("td:eq(2)").find("input.E102InputDeliveryMessage").val(valueMessage);
+                    }
+                    if (valueDate != undefined) {
+                        if (valueStatus == "30") {
+                            $(tr).children("td:eq(3)").find("input.E102InputDeliveryDate").val(valueDate);
+                            $(tr).children("td:eq(3)").find("input.E102InputDeliveryDate").prop("disabled", false);
+                        } else {
+                            $(tr).children("td:eq(3)").find("input.E102InputDeliveryDate").prop("disabled", true);
+                        }
+                    }
+                }
+            }
+        });
+
+        $("#E102Tbody").off("click", "input.E102BtnDeliveryCompany").on("click", "input.E102BtnDeliveryCompany", function () {
+            var valueCompany = $(this).prev().prev("select").val();
+            var valueDeliveryOrder = $(this).prev("input").val();
+            var trIndex = $(this).parent().parent().index();
+            var allTrs = $(this).parent().parent().parent().children("tr");
+            for (var i = 0; i < allTrs.length; i++) {
+                if (i <= trIndex) {
+                    continue;
+                }
+                var tr = allTrs[i];
+                console.log("運費：" + ("此為運費" == $(tr).children("td:eq(2)").html()));
+                if ("此為運費" == $(tr).children("td:eq(2)").html()) {
+                    continue;
+                }
+                $(tr).children("td:eq(4)").children("select").val(valueCompany);
+                $(tr).children("td:eq(4)").children("input[type='text']").val(valueDeliveryOrder);
+            }
+        });
+
+        $("#E102BtnConfirm").off("click").on("click", function () {
+            // Check if there still order need to be change address
+            var changeAddressCheckboxes = $("#E102Tbody input[type='checkbox'][name='E102CheckboxForChangeAddress']");
+            if (changeAddressCheckboxes.length > 0) {
+                $("#E102ModalTitle").html("執行結果");
+                $("#E102DivModalBody").html("有客人申請改址訂單尚未處理，請先回覆才能進行出貨");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+
+            cacheEditing = {};
+            var trs = $("#E102Tbody tr");
+            if (trs != null && trs != undefined && trs.length > 0) {
+                for (var i = 0; i < trs.length; i++) {
+                    var tr = $(trs[i]);
+                    cacheEditing[tr.children("td:eq(1)").html()] = {
+                        status: tr.find("select.E102SelectDeliveryStatus") == undefined ? "" : tr.find("select.E102SelectDeliveryStatus").val()
+                        , message: tr.find("input.E102InputDeliveryMessage") == undefined ? "" : tr.find("input.E102InputDeliveryMessage").val()
+                        , date: tr.find("input.E102InputDeliveryDate") == undefined ? "" : tr.find("input.E102InputDeliveryDate").val()
+                        , company: tr.find("select.E102SelectDeliveryCompany") == undefined ? "" : tr.find("select.E102SelectDeliveryCompany").val()
+                        , slip: tr.find("input.E102InputDeliveryNo") == undefined ? "" : tr.find("input.E102InputDeliveryNo").val()
+                        , type: tr.find("select.E102SelectPackingType") == undefined ? "" : tr.find("select.E102SelectPackingType").val()
+                        , cata: tr.find("select.E102SelectPackingCatalog") == undefined ? tr.find("td:eq(6)").html() : tr.find("select.E102SelectPackingCatalog").val()
+                        , weight: tr.find("input.E102InputPackingWeight") == undefined ? tr.find("td:eq(7)").html() : tr.find("input.E102InputPackingWeight").val()
+                    };
+                }
+            }
+            console.log("cache>>>" + cacheEditing);
+
+            var delivery10ErrorHtml = "";
+            var delivery10 = new Array();
+            var delivery50 = new Array();
+            var shipfees = new Array();
+            var datas = new Array();
+            for (var i = 0; i < trs.length; i++) {
+                var tr = trs[i];
+                var tds = $(tr).children("td");
+                console.log(tds.length);
+                if (tds == null || tds == undefined || tds.length == 0) {
+                    continue;
+                }
+
+                var fullOrderNo = $(tds[1]).html();
+                var packingType = $(tds[5]).find("select.E102SelectPackingType").val();
+                if (packingType == undefined || packingType == null) {
+                    packingType = "";
+                }
+                var packingCatalog = $(tds[6]).find("select.E102SelectPackingCatalog").val();
+                if (packingCatalog == undefined) {
+                    packingCatalog = $(tds[6]).html();
+                    if (packingCatalog.indexOf("select") >= 0) {
+                        packingCatalog = "";
+                    }
+                }
+                var packingWeight = $(tds[7]).find("input[type='number']").val();
+                if (packingWeight == undefined) {
+                    packingWeight = $(tds[7]).html().replace("公克", "");
+                }
+                if (packingWeight == undefined || packingWeight == null) {
+                    if (packingCatalog == "") {
+                        packingWeight = "";
+                    }
+                }
+                var deliveryStatus = $(tds[2]).find("select.E102SelectDeliveryStatus").val();
+
+                if (deliveryStatus == null || deliveryStatus == undefined) {
+                    deliveryStatus = $(tds[2]).html();
+                }
+                if (deliveryStatus == null || deliveryStatus == undefined || deliveryStatus == "00") {
+                    deliveryStatus = "";
+                }
+                var deliveryDate = "";
+                if (deliveryStatus == "30") {
+                    deliveryDate = $(tds[3]).find("input.E102InputDeliveryDate").val();
+                }
+                if (deliveryStatus == null || deliveryStatus == undefined) {
+                    deliveryDate = "";
+                }
+                var deliveryNote = $(tds[2]).find("input.E102InputDeliveryMessage").val();
+                if (deliveryNote == null || deliveryNote == undefined) {
+                    deliveryNote = "";
+                }
+                var deliveryCompany = $(tds[4]).find("select").val();
+                if (deliveryCompany == null || deliveryCompany == undefined) {
+                    deliveryCompany = "";
+                }
+                var deliveryNo = $(tds[4]).find("input[type='text']").val();
+                if (deliveryNo == null || deliveryNo == undefined) {
+                    deliveryNo = "";
+                }
+
+                var orderGoodsGb = $(tr).attr("orderGoodsGb");
+                var agreedDeliveryYn = $(tr).attr("agreedDeliveryYn");
+
+                //剔除資料不全的訂單
+                if (deliveryStatus == "") {
+                    continue;
+                } else if (deliveryStatus == "10") {
+
+                    var trClass = $(tr).attr('class');
+                    var customerAsk = trClass == "customer-ask" ? "Y" : "N";//是否客戶在前台要求改約配日
+
+                    var delyPlanDate = $(tds[13]).html();
+                    if (!isValidDateFormat(delyPlanDate)) {
+                        if (agreedDeliveryYn == "1") {
+                            delivery10ErrorHtml += ("訂單編號：" + fullOrderNo + "，約配訂單，需先選擇約定配送日並回填約定配送日，才可執行出貨<br/>");
+                        } else {
+                            if (orderGoodsGb == "1" || orderGoodsGb == "2") {
+                                delivery10ErrorHtml += ("訂單編號：" + fullOrderNo + "，尚未有最晚出貨日，不可回壓\"已配送\"，請先回填活動主商品的約定配送日<br/>");
+                            }
+                        }
+                        continue;
+                    } else if (customerAsk == "Y") {
+                        delivery10ErrorHtml += ("訂單編號：" + fullOrderNo + "，約配訂單，需先選擇約定配送日並回填約定配送日，才可執行出貨<br/>");
+                        continue;
+                    } else if (deliveryCompany == "") {
+                        delivery10ErrorHtml += ("訂單編號：" + fullOrderNo + "，配送狀態為已配送，需選擇物流公司<br/>");
+                        continue;
+                    } else if (deliveryNo == "" || deliveryNo.length > 20) {
+                        delivery10ErrorHtml += ("訂單編號：" + fullOrderNo + "，配送狀態為已配送，需填寫配送單號<br/>");
+                        continue;
+                    } else if (packingType == "") {
+                        delivery10ErrorHtml += ("訂單編號：" + fullOrderNo + "，出貨包材未填寫<br/>");
+                        continue;
+                    } else if (packingCatalog == "") {
+                        delivery10ErrorHtml += ("訂單編號：" + fullOrderNo + "，包材類型未填寫<br/>");
+                        continue;
+                    } else if (packingWeight == "") {
+                        delivery10ErrorHtml += ("訂單編號：" + fullOrderNo + "，包材重量未填寫<br/>");
+                        continue;
+                    } else {
+                        delivery10.push(fullOrderNo.split("-")[0]);
+                    }
+
+                } else if (deliveryStatus == "30") {
+                    if (deliveryDate == "") {
+                        continue;
+                    }
+                } else if (deliveryStatus == "50") {
+                    delivery50.push(fullOrderNo.split("-")[0]);
+                }
+
+                var data = {
+                    fullOrderNo: fullOrderNo
+                    , packingType: packingType
+                    , packingCatalog: packingCatalog
+                    , packingWeight: packingWeight
+                    , deliveryStatus: deliveryStatus
+                    , deliveryDate: deliveryDate
+                    , deliveryNote: deliveryNote
+                    , deliveryCompany: deliveryCompany
+                    , deliveryNo: deliveryNo
+                    , orderGoodsGb: orderGoodsGb
+                    , agreedDeliveryYn: agreedDeliveryYn
+                };
+
+                //運費稍候處理
+                if (deliveryStatus == "此為運費") {
+                    shipfees.push(data);
+                    continue;
+                }
+
+                datas.push(data);
+            }
+
+            //處理運費：10與50狀態，有運費時，一定要跟隨首件處理
+            for (var i = 0; i < shipfees.length; i++) {
+                var orderNo = shipfees[i]["fullOrderNo"].split("-")[0];
+                if (delivery10.includes(orderNo)) {
+                    //運費有主商品訂單，加入
+                    datas.push(shipfees[i]);
+                    continue;
+                }
+                if (delivery50.includes(orderNo)) {
+                    //運費有主商品訂單，加入
+                    datas.push(shipfees[i]);
+                    continue;
+                }
+            }
+
+            console.log(datas);
+            if (delivery50.length > 0) {
+                showModal(getNoGoodsModal(datas, delivery10ErrorHtml));
+            } else {
+                doConfirm(datas, delivery10ErrorHtml);
+            }
+        });
+
+        $("#E102SpanLink").off("click").on("click", function () {
+            window.open("https://rules.momo.com.tw/logistics/00021/", "_new");
+        });
+
+        $("#E102BtnToggleQuery").off("click").on("click", function () {
+            var value = $("#E102BtnToggleQuery").val();
+            if (value == "＋展開查詢") {
+                $("#E102BtnToggleQuery").val("ㄧ關閉查詢");
+                $("#E102DivToggleQuery").show();
+            } else {
+                $("#E102BtnToggleQuery").val("＋展開查詢");
+                $("#E102DivToggleQuery").hide();
+            }
+        });
+
+        $(document).off("click", '.container').on("click", '.container', function (event) {
+            var id = $(event.target).attr("id");
+            if ("E102BtnImport" == id || "E102BtnModalUploadFile" == id) {
+                $("#E102BtnModalUploadFile").removeClass("invisible-w0");
+                $("#E102DivModalReceiptMsg").addClass("invisible-w0");
+            } else if (id != null && id != undefined && id != "") {
+                if ($("#E102DivModalDialog.show").length == 0 && $("#E102BtnModalUploadFile.invisible-w0").length == 0) {
+                    $("#E102BtnModalUploadFile").addClass("invisible-w0");
+                    $("#E102DivModalReceiptMsg").addClass("invisible-w0");
+                }
+            }
+        });
+
+        function isValidDateFormat(date) {
+            date = chgDateSplitToDash(date);
+            const regex = /^\d{4}-\d{2}-\d{2}$/;
+            return regex.test(date);
+        }
+
+        function chgDateSplitToDash(val) {
+            if (val) {
+                val = val.replace(/\//g, "-");
+            }
+            return val;
+        }
+
+        function chgDateSplitToSlash(val) {
+            if (val) {
+                val = val.replace(/-/g, "/");
+            }
+            return val;
+        }
+
+        //將日期轉換為 "YYYY-MM-DD" 格式
+        function getDateStr(dateStr) {
+            var myDate = new Date(dateStr);
+            var year = myDate.getFullYear();
+            var month = myDate.getMonth() + 1;
+            var day = myDate.getDate();
+
+            month = month < 10 ? '0' + month : month;
+            day = day < 10 ? '0' + day : day;
+
+            return year + '-' + month + '-' + day;  //例: 2024-06-27
+
+        }
+
+        function doConfirm(data, delivery10ErrorHtml) {
+            $.ajax({
+                cache: false,
+                type: "post",
+                url: "/E102Servlet.do",
+                contentType: "application/json;charset=UTF-8",
+                data: JSON.stringify({ doAction: "ConfirmDelivery", datas: data }),
+                dataType: "json",
+                success: function (ret) {
+                    console.log(ret);
+                    handlerConfirmDeliveryResults(ret.datas, delivery10ErrorHtml);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        /**
+         * 無量取消文案物件
+         */
+        function getNoGoodsModal(data, delivery10ErrorHtml) {
+            let modalObj = {};
+            modalObj.title = '無量取消訂單';
+            modalObj.content = '若因商品無量需取消訂單，請於訂單配送狀態選擇「無貨取消訂單」，系統將會發送推播通知客人，後續請店家於【E106訂單總覽】透過問問與客人聯絡';
+            modalObj.confirmText = '確認';
+            modalObj.confirmFunction = () => {
+                hideModal();
+                doConfirm(data, delivery10ErrorHtml);
+            }
+            return modalObj;
+        }
+
+        $("#E102CheckboxAllChangeAddress").off("change").on("change", function () {
+            var checked = $(this).is(":checked");
+            $("input[type='checkbox'][name='E102CheckboxForChangeAddress']").prop("checked", checked);
+        });
+
+        // 同訂單編碼的商品需要一併改址
+        $(document).on("change", "input[type='checkbox'][name='E102CheckboxForChangeAddress']", function () {
+            var checkedValue = $(this).is(":checked");
+            var parentTr = $(this).closest("tr");
+            var orderFullNo = parentTr.attr("id");
+            var orderNo = orderFullNo.split("-")[0];
+            $('#E102Tbody tr[id*="' + orderNo + '"]').each(function () {
+                $(this).find("input[type='checkbox'][name='E102CheckboxForChangeAddress']").prop("checked", checkedValue);
+            });
+        });
+
+        $("#E102BtnAcceptChangeAddress").off("click").on("click", function () {
+            var checkedCheckboxes = $("#E102Tbody input[type='checkbox'][name='E102CheckboxForChangeAddress']:checked");
+            if (checkedCheckboxes.length == 0) {
+                $("#E102ModalTitle").html("執行結果");
+                $("#E102DivModalBody").html("請選擇同意改地址的訂單");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+            var isAccept = true;
+            let selectedOrders = {
+                isAccept: isAccept,
+                orders: []
+            };
+            checkedCheckboxes.each(function () {
+                let trElement = $(this).closest("tr");
+                let orderFullNo = trElement.find('[name="fullOrderNo"]').html();
+                selectedOrders.orders.push({
+                    orderFullNo: orderFullNo
+                });
+            });
+            doChangeAddressAction(selectedOrders,isAccept);
+        });
+
+        $("#E102BtnRefuseChangeAddress").off("click").on("click", function () {
+            var checkedCheckboxes = $("#E102Tbody input[type='checkbox'][name='E102CheckboxForChangeAddress']:checked");
+            if (checkedCheckboxes.length == 0) {
+                $("#E102ModalTitle").html("執行結果");
+                $("#E102DivModalBody").html("請選擇拒絕改地址的訂單");
+                $("#E102DivModalDialog").modal("show");
+                return;
+            }
+            var isAccept = false;
+            let selectedOrders = {
+                isAccept: isAccept,
+                orders: []
+            };
+            checkedCheckboxes.each(function () {
+                let trElement = $(this).closest("tr");
+                let orderFullNo = trElement.find('[name="fullOrderNo"]').html();
+                selectedOrders.orders.push({
+                    orderFullNo: orderFullNo
+                });
+            });
+            doChangeAddressAction(selectedOrders,isAccept);
+        });
+
+        function doChangeAddressAction(data, isAccept) {
+            $.ajax({
+                cache: false,
+                type: "post",
+                url: "/E102Servlet.do",
+                contentType: "application/json;charset=UTF-8",
+                data: JSON.stringify({ doAction: "ChangeAddressAction", datas: data }),
+                dataType: "json",
+                success: function (ret) {
+                    if (isAccept) {
+                        keepChangedAddress(ret.datas);
+                    } else {
+                        keepOriginAddress(ret.datas);
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function keepOriginAddress(datas) {
+            var failOrderFullNoList = [];
+            if (datas != null && datas != undefined && datas.length > 0) {
+                for (var i = 0; i < datas.length; i++) {
+                    var orderFullNo = datas[i].orderFullNo;
+                    var isSuccess = datas[i].success;
+                    var tr = $("#E102Tbody").find("tr[id='" + orderFullNo + "']");
+                    if (tr != null && tr != undefined && tr.length > 0) {
+                        if (isSuccess) {
+                            tr.find("[name='E102ChangedReceiverDiv']").remove();
+                            tr.find("[name='E102CheckboxForChangeAddress']").remove();
+                        } else {
+                            failOrderFullNoList.push(orderFullNo + ", " + datas[i].message);
+                        }
+                    }
+                }
+            }
+            if (failOrderFullNoList.length > 0) {
+                var modalBody = `
+                    <div>
+                        <strong>注意！</strong>以下訂單拒絕改址失敗！<br/>
+                        <strong>` + failOrderFullNoList.join("<br/>") + `</strong><br/>
+                    </div>
+                `;
+                $("#E102ModalTitle").html("執行結果");
+                $("#E102DivModalBody").html(modalBody);
+                $("#E102DivModalDialog").modal("show");
+            }
+        }
+
+        function keepChangedAddress(datas) {
+            var failOrderFullNoList = [];
+            if (datas != null && datas != undefined && datas.length > 0) {
+                for (var i = 0; i < datas.length; i++) {
+                    var orderFullNo = datas[i].orderFullNo;
+                    var isSuccess = datas[i].success;
+                    var tr = $("#E102Tbody").find("tr[id='" + orderFullNo + "']");
+                    if (tr != null && tr != undefined && tr.length > 0) {
+                        if (isSuccess) {
+                            tr.find("[name='E102OriginReceiverDiv']").remove();
+                            tr.find("[name='E102ChangedReceiverName']").show();
+                            tr.find("[name='E102ChangedReceiverTel']").show();
+                            tr.find("[name='E102ChangedReceiverAddress']").attr("name", "E102ReceiverAddress");
+                            tr.find("[name='E102ChangedReceiverName']").attr("name", "E102ReceiverName");
+                            tr.find("[name='E102ChangedReceiverTel']").attr("name", "E102ReceiverTel");
+                        } else {
+                            failOrderFullNoList.push(orderFullNo + ", " + datas[i].message);
+                        }
+                    }
+                }
+            }
+            var modalBody = `
+                <div>
+                    地址變更成功，請務必以新地址寄出商品
+                </div>
+            `
+            if (failOrderFullNoList.length > 0) {
+                modalBody += `
+                    <div>
+                        <strong>注意！</strong>以下訂單改址失敗！<br/>
+                        <strong>` + failOrderFullNoList.join("<br/>") + `</strong><br/>
+                    </div>
+                `;
+            }
+            $("#E102ModalTitle").html("執行結果");
+            $("#E102DivModalBody").html(modalBody);
+            $("#E102DivModalDialog").modal("show");
+            return;
+        }
+
+    });
+</script>
+
+</div>
+    <!-- modal -->
+    <div class="modal fade global-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalLabel"></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-sm cancelText" data-bs-dismiss="modal"></button>
+            <button type="button" class="btn btn-primary btn-sm confirmText"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+		<!-- 讀取中遮罩 -->
+		<div class="modal fade loading-modal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" data-bs-keyboard="false">
+			<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-body text-center">
+						<div class="spinner-border" role="status"></div>
+						<div class="mt-2">Loading</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    <!-- 廠服mail -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document" style="top: 80px; right:-400px; width: 400px;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-6 fw-bolder" id="contactLabel">聯絡momo</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-6">
+            <div style="border-radius: 3px; padding: 9px; border: 1px solid #e3e3e3; background-color: #f5f5f5; width: 320px;">
+              <label style="font-weight: bold;">系統操作諮詢</label><br>
+              <label style="color: gray;">服務專線：(02)6600-7609</label><br>
+              <label style="color: gray;">透過問問：<a href="#" style="color: blue;" onclick="showAskModalForSystem()">點我成立問問</a></label><br>
+              <label style="color: gray;">服務時間：9:00-18:00 週一到週五</label>
+            </div>
+          </div>
+          <div class="modal-body fs-6">
+            <div style="border-radius: 3px; padding: 9px; border: 1px solid #e3e3e3; background-color: #f5f5f5; width: 320px; cursor: pointer;" onclick="showErrorReportModal()">
+              <label style="font-weight: bold; cursor: pointer;">店+系統異常問題通報</label><br>
+              <label style="color: gray; cursor: pointer;">例如操作卡住、資料異常、按鈕沒反應等異常問題</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- alert -->
+    <div class="mot-alert-wrap mot-alert-fixed mt-3 invisible"></div>
+    <div class="modal" id="uploadVideoAlertModal" style="display: none;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="top: 280px;">
+          <div class="modal-header">
+            <h1 class="modal-title fs-6 fw-bolder">請依照您的作業系統，使用快捷鍵執行螢幕錄影</h1>
+          </div>
+          <div class="modal-body fs-6">
+            Windows系統
+            <br>
+            ※ 開啟錄影控制台:Windows鍵+G
+            <br>
+            ※ 開始/停止錄影:Windows鍵+Alt+R
+            <br><br>
+            Mac系統
+            <br>
+            ※ 開啟錄影工具列:Command+Shift+5
+            <br>
+            ※ 點擊「錄製」開始錄影
+            <br><br>
+            錄影完成後，影片會自動儲存在您的電腦中，請至裝置中找到影片檔並上傳
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" onclick="modalClose('video')">我知道了</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="uploadImageAlertModal" style="display: none;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="top: 400px;">
+          <div class="modal-header">
+            <h1 class="modal-title fs-6 fw-bolder">總檔案大小超過20MB</h1>
+          </div>
+          <div class="modal-body fs-6">
+            請移除其他圖片，再重新上傳
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm" onclick="modalClose('Image')">確認</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- footer : 一般的頁腳版面外觀容器 -->
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <p class="mot-footer-text text-center">
+        <small>富邦媒體公司由店+系統上收到之任何回覆，均視為店家之回覆，故店家除應妥善保管所核發之momo OTP帳密，並應依據本【A101】使用人管理功能妥善設定使用人及其使用權限。</small>
+      </p>
+    </div>
+  </footer>
+  <!-- 免運門檻 Modal Alert -->
+  <button type="button" class="btn btn-outline-primary btn-sm d-none" data-bs-toggle="modal" data-bs-target="#returnFreeShipping" id="btnFreeShipping"></button>
+  <div class="modal fade" id="returnFreeShipping" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">權益提醒</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row row-cols-2 g-2 mb-3">
+                  <div class="col-12">您進行中的運費門檻活動未符合條件</div>
+                  <div class="col-12">建議調整配送方式及免運門檻如下表，以提升您的商品搜尋排名</div>
+                  <div class="col-12">
+                    <table id="freeShippingModalTable" class="mot-table-frame table table-striped dataTable no-footer">
+                      <thead class="mot-table-header">
+                        <tr>
+                          <th scope="col">配送方式/溫層</th>
+                          <th scope="col" class="text-end">免運門檻</th>
+                          <th scope="col" class="text-center">符合條件</th>
+                        </tr>
+                      </thead>
+                      <tbody id="freeShippingModalBody"></tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" onclick="Frame.goToC103()">前往設定</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal" id="btnCloseModal">關閉</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <!-- #85181 新增系統建立運費門檻活動 -->
+  <button type="button" class="btn btn-outline-primary btn-sm d-none" data-bs-toggle="modal" data-bs-target="#sysFreeShipping" id="btnSysFreeShipping"></button>
+  <div class="modal fade mot-modal-lg" id="sysFreeShipping" data-bs-backdrop="static" tabindex="-1" aria-hidden="true" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">運費門檻公告</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row row-cols-2 g-2 mb-3">
+            <div class="col-12 mt-0"><br></div>
+            <div class="col-12 mt-0">親愛的店家你好</div>
+            <div class="col-12 mt-0">為提升平台整體服務品質，自2026年1月15日起協助店家設定「免運門檻」，為避免影響商店搜推曝光，請所有商店務必完成相關設定。</div>
+            <div class="col-12 mt-0">完成同意後，系統將自動套用預設的「免運門檻」，並結束店家在【C103運費門檻】內設定的活動。</div>
+            <div class="col-12 mt-0">店家可前往【C103運費門檻】依需求調整門檻金額，調整金額需符合系統可異動範圍，否則無法更改。</div>
+            <div class="col-12 mt-0"><br></div>
+            <div class="col-12 mt-0">【服務條款】</div>
+            <div class="col-12 mt-0">(1) 店家知悉並同意，自選擇同意免運門檻設定起，店家已充分了解活動相關費用及權益，不得針對本活動相關費用的異常收取提出異議或請求賠償。</div>
+            <div class="col-12 mt-0">(2) momo保有變更本計畫內容之權利，並得於後臺公告或以其他方式通知店家活動內容變動。</div>
+            <div class="col-12">
+              <table id="sysFreeShippingModalTable" class="mot-table-frame table table-striped dataTable no-footer">
+                <thead class="mot-table-header">
+                  <tr>
+                    <th class="col-4">配送方式/溫層</th>
+                    <th class="col-4 text-center">系統設定</th>
+                    <th class="col-4 text-center">可異動範圍</th>
+                  </tr>
+                </thead>
+                <tbody id="sysFreeShippingModalBody"></tbody>
+              </table>
+            </div>
+            <div class="col-12">
+              <input class="form-check-input" type="checkbox" id="sysFreeShippingAgree" checked="">
+              <label class="form-check-label" for="sysFreeShippingAgree">我已閱讀 <a href="https://rules.momo.com.tw/bulletin/00016/#b202601" target="_blank" style="color: dodgerblue;">活動內容</a> 並同意服務條款</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="Frame.setEntpSysFreeShipping()">我同意</button>
+          <button type="button" class="btn btn-primary" style="display: none;" id="closeSysFreeShipping" data-bs-dismiss="modal" aria-label="Close">關閉</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="ask2-chat-widget-container"><div class="qachat-window"><div class="qachat-window-btn position-fixed bottom-0 end-0 m-6 bg-transparent" data-title="入口按鈕"><div class="qachat-window-btn-bubble">1</div><button class="border-0 bg-transparent" title="問問" aria-label="問問"><picture><img alt="問問" width="65px" height="55px" src="./img/momoask/qachat-query.svg"></picture></button></div><div class="qachat-window-content d-none" data-title="列表"><span class="chat-handle"></span><div class="resize-handle handle-left"></div><div class="resize-handle handle-top"></div><div class="resize-handle handle-corner"></div><div class="chat-store-header"><div class="chat-store-header-item top"><div class="chat-store-header-left"></div><div class="chat-store-header-center"><div class="chat-store-header-logo"></div><p class="chat-store-header-text"></p></div><div class="chat-store-header-right"><button type="button" class="btn-close"></button></div></div></div><div class="chat-store-body"><div class="card border-0"><div class="card-header p-0 bg-white"><div class="chat-store-search-bar" data-title="列表"><div class="chat-store-search-bar-item"><div class="chat-store-search-bar-left"><label><p id="recordLabel" class="position-absolute m-0 form-select form-select-sm fw-bold" style="pointer-events: none;">客人對話紀錄</p><select class="form-select form-select-sm fw-bold"><option value="1">客人對話紀錄 (1)</option><option value="3">申請平台介入紀錄 (0)</option><option value="5">平台通知 (0)</option></select></label><b class="qachat-bubble"></b></div><div class="chat-store-search-bar-right" data-title="客人對話紀錄"><input class="form-input-search form-control form-control-sm" enterkeyhint="search" placeholder="請輸入完整品號或訂單編號" type="text" value=""><button type="button" class="btn btn-primary btn-sm">查詢</button></div></div></div><div class="chat-store-nav" data-title="列表"><nav class="nav nav-underline flex-row gap-2 px-3"><a class="nav-link active" href="#">全部</a><a class="nav-link " href="#">未讀 <span>(1)</span></a><a class="nav-link " href="#">未回覆 <span>(1)</span></a><a class="nav-link " href="#">黑名單 <span>(0)</span></a></nav></div></div><div class="card-body p-0"><div class="list-group list-group-flush overflow-y-auto qachat-list" data-title="列表"><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">黃*翔</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">20:50</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">好的，謝謝</small><span class="badge rounded-pill text-bg-primary flex-shrink-0 ms-1">未讀</span></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">王*琦</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:53</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">林*慧</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:50</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">游*芬</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:45</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]📝花一分鐘告訴我們您的感受，讓服務更貼近需求！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">郭*蓮</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:42</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">曾*傑</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:42</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">蔡*賢</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:41</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">蔣*選</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:40</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">林*伶</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:38</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">巫*盈</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">08:37</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">賴*妤</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">02/27</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">李*城</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">02/27</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">陳*君</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">02/27</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">李*濤</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">02/27</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a><a href="#" class="list-group-item list-group-item-action"><div class="conversation-row d-flex"><div class="conversation-icon-wrap d-flex align-items-center"><i class="icon-qachat icon-qachat-unmarked flex-shrink-0" style="cursor: pointer;"></i></div><div class="conversation-content flex-grow-1 min-w-0"><p class="mb-0 d-flex align-items-center"><span class="flex-grow-1 text-overflow">楊*怡</span><span class="text-body-tertiary ms-1 flex-shrink-0 text-end">02/27</span></p><p class="mb-0 d-flex align-items-center"><small class="text-nowrap flex-grow-1 text-overflow pe-5">[系統]⭐ 喜歡這次的購物嗎？留下評價，專屬回饋等你領！</small></p></div></div></a></div></div></div></div></div></div></div></body></html>
