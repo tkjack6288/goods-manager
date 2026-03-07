@@ -26,7 +26,10 @@ app = FastAPI(title="多平台商品與訂單管理系統 API", lifespan=lifespa
 # 設定 CORS (Cross-Origin Resource Sharing)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://goods-manager-frontend-164815154526.asia-east1.run.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
