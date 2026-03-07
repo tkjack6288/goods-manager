@@ -21,7 +21,7 @@ export default function ProductsPage() {
     const handleSync = async () => {
         setIsSyncing(true);
         try {
-            const res = await fetch("https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/products", {
+            const res = await fetch("https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/products/", {
                 method: "POST"
             });
             if (res.ok) {

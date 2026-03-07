@@ -36,7 +36,7 @@ export default function OrdersPage() {
             if (selectedPlatform && selectedPlatform !== "全部平台") params.append("platform", selectedPlatform);
             if (selectedStatus && selectedStatus !== "全部狀態") params.append("status", selectedStatus);
 
-            const res = await fetch(`https://goods-manager-backend-164815154526.asia-east1.run.app/api/orders?${params.toString()}`);
+            const res = await fetch(`https://goods-manager-backend-164815154526.asia-east1.run.app/api/orders/?${params.toString()}`);
             if (res.ok) {
                 const data = await res.json();
                 setOrders(data);
@@ -58,7 +58,7 @@ export default function OrdersPage() {
     const handleSync = async (platform?: string) => {
         setIsSyncing(true);
         try {
-            const url = platform ? `https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/orders?platform=${platform}` : "https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/orders";
+            const url = platform ? `https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/orders/?platform=${platform}` : "https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/orders/";
             const res = await fetch(url, {
                 method: "POST"
             });
