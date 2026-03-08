@@ -19,22 +19,7 @@ export default function ProductsPage() {
     const [isSyncing, setIsSyncing] = useState(false);
 
     const handleSync = async () => {
-        setIsSyncing(true);
-        try {
-            const res = await fetch("https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/products", {
-                method: "POST"
-            });
-            if (res.ok) {
-                alert("已在背景觸發商品同步任務！這可能需要幾分鐘的時間，請稍後重整查看最新狀態。");
-            } else {
-                alert("同步請求失敗，請確認後端是否正常運作。");
-            }
-        } catch (error) {
-            console.error("同步錯誤:", error);
-            alert("網路錯誤，無法連線至後端伺服器。");
-        } finally {
-            setIsSyncing(false);
-        }
+        alert("⚠️ 因平台安全驗證 (如圖形驗證碼/簡訊) 機制，雲端無法開瀏覽器抓資料。\n\n👉 已經為您設定好！請點擊您的 Windows 電腦專案目錄下的「run_sync.bat」來安全地在本地執行同步喔！");
     };
 
     const filteredProducts = PRODUCTS.filter(p =>
