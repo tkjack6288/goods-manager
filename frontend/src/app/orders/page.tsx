@@ -58,7 +58,7 @@ export default function OrdersPage() {
     const handleSync = async (platform?: string) => {
         setIsSyncing(true);
         try {
-            const url = platform ? `https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/orders/?platform=${platform}` : "https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/orders/";
+            const url = platform ? `https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/orders?platform=${platform}` : "https://goods-manager-backend-164815154526.asia-east1.run.app/api/platforms/sync/orders";
             const res = await fetch(url, {
                 method: "POST"
             });
